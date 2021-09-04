@@ -1,4 +1,5 @@
 import React from "react";
+import ViewMoreButton from "../../components/ViewMoreButton";
 
 export default function Welcome() {
   return (
@@ -16,9 +17,7 @@ export default function Welcome() {
           <p className="mt-4 text-lg font-normal ">
             Add salon description here, <br /> see more.
           </p>
-          <div className="flex  mt-10 w-40 justify-center py-3 px-6 bg-pink-500 text-white rounded-full animate-pulse">
-            <button className="text-lg text-md ">Our Services</button>
-          </div>
+          <ViewMoreButton message="Our Services" />
         </div>
       </div>
       {/* <!-- Box right --> */}
