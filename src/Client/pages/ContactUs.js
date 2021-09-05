@@ -1,9 +1,12 @@
 import React from "react";
 import Iframe from "react-iframe";
+import NavBar from "../components/NavBar";
+import Footer from "./HomePage/Footer";
 
 export default function ContactUs() {
   return (
     <div>
+      <NavBar />
       <section class="text-gray-600 body-font relative">
         <div class="absolute inset-0 bg-pink-300">
           <Iframe
@@ -57,6 +60,7 @@ export default function ContactUs() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
