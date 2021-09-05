@@ -6,7 +6,7 @@ export default function NavBar({ fixed }) {
 
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-pink-500 to-red-500 ">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-b to-pink-500 from-red-500 ">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link
