@@ -2,7 +2,7 @@ import React from "react";
 
 export default function OurTeam() {
   return (
-    <div className="container bg-pink-100 border-t-2 border-pink-200 border-solid">
+    <div className="bg-pink-100 border-t-2 border-pink-200 border-solid">
       {" "}
       <div className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
