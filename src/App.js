@@ -9,6 +9,7 @@ import ContactUs from "./Client/pages/ContactUs";
 import Infromation from "./Client/pages/Infromation";
 import Support from "./Client/pages/Support";
 import ServiceDetails from "./Client/pages/ServiceDetails";
+import Cart from "./Client/pages/Cart";
 // admin routes
 import AdminLogin from "./Admin/pages/Login";
 import AdminDashboard from "./Admin/pages/Dashboard";
@@ -37,6 +38,8 @@ function App() {
         <Route path="/infromation" exact component={Infromation}></Route>
         <Route path="/support" exact component={Support}></Route>
         <Route path="/serviceDetails" exact component={ServiceDetails}></Route>
+        <Route path="/cart" exact component={Cart}></Route>
+
         {/* Admin routes */}
         <Route path="/admin/login" exact component={AdminLogin}></Route>
         <Route path="/admin/dashboard" exact component={AdminDashboard}></Route>

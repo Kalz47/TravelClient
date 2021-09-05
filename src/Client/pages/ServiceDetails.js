@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import ServiceCard from "../components/ServiceCard";
+import ServiceCard from "../components/Card/ServiceCard";
 import Footer from "./HomePage/Footer";
 
 export default function ServiceDetails() {

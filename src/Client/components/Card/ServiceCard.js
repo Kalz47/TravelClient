@@ -1,5 +1,4 @@
 import React from "react";
-import ViewMoreButton from "./ViewMoreButton";
 
 export default function ServiceCard() {
   return (
