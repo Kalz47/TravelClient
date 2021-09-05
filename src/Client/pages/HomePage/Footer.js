@@ -205,7 +205,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-pink-500">
+      <div className="bg-gradient-to-b from-pink-500 to-red-500 ">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-white text-sm text-center sm:text-left">
             © 2020 add here —
