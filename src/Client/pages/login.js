@@ -1,8 +1,34 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import { login } from "../../actions/auth";
+import { connect, useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 
-export default function Login() {
+const Login = ({ history }) => {
+  const dispatch = useDispatch();
+  const [value, setValue] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { email, password } = value;
+
+  const handleChange = (e) => {
+    setValue({ ...value, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      dispatch(login(value));
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <NavBar />
@@ -20,18 +46,32 @@ export default function Login() {
                 </div>
                 <div className="md:col-span-2 p-6 ">
                   <h1 className="text-2xl text-gray-700 ">Login</h1>
-                  <div className="space-y-4">
+                  <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="flex flex-col mt-4">
                       <label className="text-sm text-gray-600">Username</label>
-                      <input className="py-2 px-2 border rounded-md border-gray-200  " />
+                      <input
+                        className="py-2 px-2 border rounded-md border-gray-200"
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="flex flex-col">
                       <label className="text-sm text-gray-600">Password</label>
-                      <input className="py-2 px-2 border rounded-md border-gray-200  " />
+                      <input
+                        className="py-2 px-2 border rounded-md border-gray-200"
+                        name="password"
+                        value={password}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div>
                       <div className="flex justify-center">
-                        <button className="py-2 px-4 border border-red-300 rounded-md hover:bg-red-500 hover:text-white text-gray-600 text-md">
+                        <button
+                          // type="submit"
+                          // onClick={handleSubmit}
+                          className="py-2 px-4 border border-red-300 rounded-md hover:bg-red-500 hover:text-white text-gray-600 text-md"
+                        >
                           Login
                         </button>
                       </div>
@@ -41,7 +81,7 @@ export default function Login() {
                         </Link>
                       </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -50,4 +90,6 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;

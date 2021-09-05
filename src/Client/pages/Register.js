@@ -1,8 +1,39 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import { registerUser } from "../../actions/auth";
+import { useDispatch } from "react-redux";
 
-export default function Register() {
+const Register = ({ history }) => {
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    password2: "",
+  });
+
+  const { email, password, password2 } = formData;
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== password2) {
+      console.log("Passwords not match");
+    } else {
+      try {
+        dispatch(registerUser(formData));
+        console.log("Success");
+        history.push("/");
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
+
   return (
     <div>
       <NavBar />
@@ -20,7 +51,7 @@ export default function Register() {
                 </div>
                 <div className="md:col-span-2 p-6 ">
                   <h1 className="text-2xl text-gray-700 ">Register</h1>
-                  <div className="space-y-4">
+                  <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="flex flex-col mt-4">
                       <label className="text-sm text-gray-600">
                         First Name
@@ -33,17 +64,32 @@ export default function Register() {
                     </div>
                     <div className="flex flex-col mt-4">
                       <label className="text-sm text-gray-600">Email</label>
-                      <input className="py-2 px-2 border rounded-md border-gray-200  " />
+                      <input
+                        className="py-2 px-2 border rounded-md border-gray-200  "
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="flex flex-col">
                       <label className="text-sm text-gray-600">Password</label>
-                      <input className="py-2 px-2 border rounded-md border-gray-200  " />
+                      <input
+                        className="py-2 px-2 border rounded-md border-gray-200  "
+                        name="password"
+                        value={password}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="flex flex-col">
                       <label className="text-sm text-gray-600">
                         Confirm Password
                       </label>
-                      <input className="py-2 px-2 border rounded-md border-gray-200  " />
+                      <input
+                        className="py-2 px-2 border rounded-md border-gray-200  "
+                        name="password2"
+                        value={password2}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="flex flex-col">
                       <label className="text-sm text-gray-600">Location</label>
@@ -61,7 +107,7 @@ export default function Register() {
                         </Link>
                       </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -70,4 +116,6 @@ export default function Register() {
       </div>
     </div>
   );
-}
+};
+
+export default Register;
