@@ -2,43 +2,81 @@ import React from "react";
 
 export default function ServicesHome() {
   return (
-    <div className="md:grid md:grid-cols-3 gap-4  bg-gray-100">
-      <div className="md:col-start-1 col-span-2 p-4 flex h-full">
-        <div className="text-gray-600 bg-white rounded-md p-4 shadow-lg md:text-2xl m-auto">
-          <span className="text-3xl">L</span>orem Ipsum is simply dummy text of
-          the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown
-          printer took a galley of type and scrambled it to make a type specimen
-          book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised in the 1960s with the release of Letraset sheets
-          containing Lorem Ipsum passages, and more recently with desktop
-        </div>
-      </div>
+    <div>
+      {/* <!-- Section Hero --> */}
+      <div class="bg-pink-100 py-14">
+        <h1 class="mt-8 text-center text-5xl text-pink-500 font-bold">
+          Our Services.
+        </h1>
 
-      <div className="col-start-3 col-end-3 p-4">
-        {/* <!-- Create By Joker Banny --> */}
-        <div className="flex items-center justify-center h-full">
-          <div className="m-auto">
-            <div
-              style={{
-                backgroundImage: `url("https://www.illumiatherapeutics.com/hs-fs/hubfs/facial-treatment-5.png?width=800&name=facial-treatment-5.png")`,
-              }}
-              className="w-80 h-80  bg-white text-transparent	 hover:text-white rounded-lg  shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer"
-            >
-              <div className=" content-center flex h-full">
-                <div className=" m-auto">
-                  {" "}
-                  <h1 className="text-xl font-bold ">Facial Treatment </h1>
-                </div>
-              </div>
-              {/* <img
-                src="https://www.illumiatherapeutics.com/hs-fs/hubfs/facial-treatment-5.png?width=800&name=facial-treatment-5.png"
+        {/* <!-- Box --> */}
+        <div class="md:flex md:justify-center md:space-x-8 md:px-14">
+          {/* <!-- box-1 --> */}
+          <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+            <div class="w-sm">
+              <img
+                class="w-64"
+                src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg"
                 alt=""
-              /> */}
+              />
+              <div class="mt-4 text-pink-500 text-center">
+                <h1 class="text-xl font-bold">Add Service Here</h1>
+                <p class="mt-4 text-gray-600">
+                  Pretium lectus quam id leo in vitae turpis. Mattis
+                  pellentesque id nibh tortor id.
+                </p>
+                <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-pink-500 text-white tracking-widest hover:bg-white hover:text-pink-500 hover:border-pink-500 transition duration-200">
+                  MORE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* <!-- box-2 --> */}
+          <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+            <div class="w-sm">
+              <img
+                class="w-64"
+                src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/3b242447f922540fbe750cab/fdf.jpg"
+                alt=""
+              />
+              <div class="mt-4 text-pink-500 text-center">
+                <h1 class="text-xl font-bold">Add Service Here</h1>
+                <p class="mt-4 text-gray-600">
+                  Nunc consequat interdum varius sit amet mattis vulputate enim
+                  nulla. Risus feugiat.
+                </p>
+                <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-pink-500 text-white tracking-widest hover:bg-white hover:text-pink-500 hover:border-pink-500 transition duration-200">
+                  MORE
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* <!-- box-3 --> */}
+          <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
+            <div class="w-sm">
+              <img
+                class="w-64"
+                src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/8cc47b39e719570b996d9879/dsds.jpg"
+                alt=""
+              />
+              <div class="mt-4 text-pink-500 text-center">
+                <h1 class="text-xl font-bold">Add Service Here</h1>
+                <p class="mt-4 text-gray-600">
+                  Nisl purus in mollis nunc sed id semper. Rhoncus aenean vel
+                  elit scelerisque mauris.
+                </p>
+                <button class="mt-8 mb-4 py-2 px-14 rounded-full bg-pink-500 text-white tracking-widest hover:bg-white hover:text-pink-500 hover:border-pink-500 transition duration-200">
+                  MORE
+                </button>
+              </div>
             </div>
           </div>
         </div>
+        <h4 class="text-center font-thin text-xl mt-14 text-pink-900">
+          Tping Efect{" "}
+        </h4>
       </div>
     </div>
   );
