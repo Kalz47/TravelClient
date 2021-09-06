@@ -37,7 +37,7 @@ const Login = ({ history }) => {
           <div className="m-auto">
             <div className="border border-gray-200 rounded-lg">
               <div className="md:grid md:grid-cols-3">
-                <div className="md:col-span-1 md:border-r border-gray-200 border-r-0 p-6 bg-gradient-to-r  rounded-t-md from-purple-400 via-pink-500 to-red-500 ">
+                <div className="md:col-span-1 md:border-r border-gray-200 border-r-0 p-6 bg-gradient-to-r  rounded-t-md from-pink-500 to-red-500 ">
                   <h1 className="text-xl text-white">Hey.. Let's login</h1>
                   <h1 className="text-md text-white mt-4">
                     You can shear your knowledge with others and gain some
@@ -50,7 +50,7 @@ const Login = ({ history }) => {
                     <div className="flex flex-col mt-4">
                       <label className="text-sm text-gray-600">Username</label>
                       <input
-                        className="py-2 px-2 border rounded-md border-gray-200"
+                        className="py-2 px-2 border rounded-full border-gray-200"
                         name="email"
                         value={email}
                         onChange={handleChange}
@@ -59,7 +59,7 @@ const Login = ({ history }) => {
                     <div className="flex flex-col">
                       <label className="text-sm text-gray-600">Password</label>
                       <input
-                        className="py-2 px-2 border rounded-md border-gray-200"
+                        className="py-2 px-2 border rounded-full border-gray-200"
                         name="password"
                         value={password}
                         onChange={handleChange}
@@ -70,7 +70,7 @@ const Login = ({ history }) => {
                         <button
                           // type="submit"
                           // onClick={handleSubmit}
-                          className="py-2 px-4 border border-red-300 rounded-md hover:bg-red-500 hover:text-white text-gray-600 text-md"
+                          className="py-2 px-4  border border-pink-500 rounded-full hover:bg-pink-500 hover:text-white text-gray-600 text-md"
                         >
                           Login
                         </button>

@@ -56,16 +56,16 @@ const Register = ({ history }) => {
                       <label className="text-sm text-gray-600">
                         First Name
                       </label>
-                      <input className="py-2 px-2 border rounded-md border-gray-200  " />
+                      <input className="py-2 px-2 border rounded-full border-gray-200  " />
                     </div>
                     <div className="flex flex-col mt-4">
                       <label className="text-sm text-gray-600">Last Name</label>
-                      <input className="py-2 px-2 border rounded-md border-gray-200  " />
+                      <input className="py-2 px-2 border rounded-full border-gray-200  " />
                     </div>
                     <div className="flex flex-col mt-4">
                       <label className="text-sm text-gray-600">Email</label>
                       <input
-                        className="py-2 px-2 border rounded-md border-gray-200  "
+                        className="py-2 px-2 border rounded-full border-gray-200  "
                         name="email"
                         value={email}
                         onChange={handleChange}
@@ -74,7 +74,7 @@ const Register = ({ history }) => {
                     <div className="flex flex-col">
                       <label className="text-sm text-gray-600">Password</label>
                       <input
-                        className="py-2 px-2 border rounded-md border-gray-200  "
+                        className="py-2 px-2 border rounded-full border-gray-200  "
                         name="password"
                         value={password}
                         onChange={handleChange}
@@ -85,7 +85,7 @@ const Register = ({ history }) => {
                         Confirm Password
                       </label>
                       <input
-                        className="py-2 px-2 border rounded-md border-gray-200  "
+                        className="py-2 px-2 border rounded-full border-gray-200  "
                         name="password2"
                         value={password2}
                         onChange={handleChange}
@@ -93,11 +93,11 @@ const Register = ({ history }) => {
                     </div>
                     <div className="flex flex-col">
                       <label className="text-sm text-gray-600">Location</label>
-                      <input className="py-2 px-2 border rounded-md border-gray-200  " />
+                      <input className="py-2 px-2 border rounded-full border-gray-200  " />
                     </div>
                     <div>
                       <div className="flex justify-center">
-                        <button className="py-2 px-4 border border-red-300 rounded-md  bg-gradient-to-r hover:text-white hover:from-pink-500 hover:to-red-500 text-pink-500  text-md ">
+                        <button className="py-2 px-4 border border-red-300 rounded-full  bg-gradient-to-r hover:text-white hover:from-pink-500 hover:to-red-500 text-pink-500  text-md ">
                           Register
                         </button>
                       </div>
