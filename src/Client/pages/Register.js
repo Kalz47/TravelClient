@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { registerUser } from "../../actions/auth";
 import { useDispatch } from "react-redux";
+import Footer from "./HomePage/Footer";
 
 const Register = ({ history }) => {
   const dispatch = useDispatch();
@@ -35,9 +36,9 @@ const Register = ({ history }) => {
   };
 
   return (
-    <div>
+    <div className="bg-hero-pattern bg-no-repeat bg-cover bg-center blur-lg">
       <NavBar />
-      <div className="md:px-40 sm:px-20 px-10">
+      {/* <div className="md:px-40 sm:px-20 px-10">
         <div className="flex h-screen ">
           <div className="m-auto">
             <div className="border border-gray-200 rounded-lg">
@@ -113,7 +114,98 @@ const Register = ({ history }) => {
             </div>
           </div>
         </div>
+  </div> */}
+      <div className="md:px-40 sm:px-20 px-10 py-44">
+        <div className="shadow-lg sm:flex">
+          <div
+            className="sm:w-2/5 w-full bg-pink-500 bg-cover bg-center text-white"
+            // style="background-image: url('')"
+          >
+            <div className="p-8">
+              <h1>
+                SIGN<span className="text-white">UP</span>
+              </h1>
+              <p className="leading-tight mt-2 text-sm text-white">
+                Create an account to join our awesome community
+              </p>
+            </div>
+          </div>
+          <div className="sm:w-3/5 w-full bg-white">
+            <div className="p-8">
+              <form onSubmit={handleSubmit}>
+                <label for="username" className="text-xs text-gray-500">
+                  First Name
+                </label>
+                <input
+                  id="username"
+                  className="w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  type="text"
+                  placeholder=""
+                />
+
+                <label for="username" className="text-xs text-gray-500">
+                  Last Name{" "}
+                </label>
+                <input
+                  id="username"
+                  className="w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  type="text"
+                  placeholder=""
+                />
+                <label for="username" className="text-xs text-gray-500">
+                  Email{" "}
+                </label>
+                <input
+                  className="w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                />
+                <label for="username" className="text-xs text-gray-500">
+                  Password
+                </label>
+                <input
+                  className="w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  name="password"
+                  value={password}
+                  onChange={handleChange}
+                />
+
+                <label id="passowrd" className="text-xs text-gray-500">
+                  Confirm Password
+                </label>
+                <input
+                  className=" mb-6 w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  name="password2"
+                  value={password2}
+                  onChange={handleChange}
+                />
+                <label id="passowrd" className="text-xs text-gray-500">
+                  Location{" "}
+                </label>
+                <input className=" mb-6 w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                <input
+                  class="shadow-lg pt-3 pb-3 w-full text-white bg-pink-500 hover:text-pink-500 hover:bg-white border hover:border-pink-500 rounded-full cursor-pointer "
+                  type="submit"
+                  value="Create account"
+                />
+              </form>
+              <div className="text-center mt-4">
+                <p className="text-sm text-gray-600">
+                  Already have an account?{" "}
+                  <a
+                    href="#"
+                    className="no-underline text-pink-500 font-bold hover:text-pink-400"
+                  >
+                    Sign in
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };
