@@ -1,4 +1,7 @@
 import React from "react";
+import Popup from "reactjs-popup";
+import SingleService from "../../pages/SingleService";
+import "./style.css";
 
 export default function ServiceCard() {
   return (
@@ -19,9 +22,40 @@ export default function ServiceCard() {
       </div>
       <div className="px-6 pt-4 pb-2 flex justify-center">
         {" "}
-        <div className="flex  w-40 justify-center mb-4 py-2 px-2 bg-pink-500 text-white rounded-full">
+        {/* <div className="flex  w-40 justify-center mb-4 py-2 px-2 bg-pink-500 text-white rounded-full">
           <button className="text-lg text-md ">View More</button>
-        </div>{" "}
+        </div>{" "} */}
+        <Popup
+          trigger={
+            <button className="button flex  w-40 justify-center mb-4 py-2 px-2 bg-sitetheme-blue text-white rounded-full">
+              {" "}
+              Vivew More{" "}
+            </button>
+          }
+          modal
+          nested
+        >
+          {(close) => (
+            <div className="modal">
+              <button className="close" onClick={close}>
+                &times;
+              </button>
+              <SingleService close={close} />
+              {/* <div className="content">
+              {" "}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a
+              nostrum. Dolorem, repellat quidem ut, minima sint vel eveniet
+              quibusdam voluptates delectus doloremque, explicabo tempore dicta
+              adipisci fugit amet dignissimos?
+              <br />
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Consequatur sit commodi beatae optio voluptatum sed eius cumque,
+              delectus saepe repudiandae explicabo nemo nam libero ad,
+              doloribus, voluptas rem alias. Vitae?
+            </div> */}
+            </div>
+          )}
+        </Popup>
       </div>
     </div>
   );

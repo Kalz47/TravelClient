@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import ServiceCard from "../components/Card/ServiceCard";
 import Footer from "./HomePage/Footer";
 
 export default function ServiceDetails() {
+  const [ispoup, setIspopup] = useState(false);
+
   return (
-    <div>
+    <div className="">
       <NavBar />
       <div
         className=" relative text-center w-full object-cover h-80 block mx-auto  sm:block sm:w-full"

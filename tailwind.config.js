@@ -7,6 +7,12 @@ module.exports = {
         "hero-pattern":
           "url('https://images.unsplash.com/photo-1432847712612-926caafaa802?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80')",
       }),
+      colors: {
+        sitetheme: {
+          blue: "#000066",
+          // default: "#5c6ac4",
+        },
+      },
     },
   },
   variants: {

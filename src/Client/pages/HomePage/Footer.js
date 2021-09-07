@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../images/logo.png";
 
 export default function Footer() {
   return (
@@ -108,22 +109,12 @@ export default function Footer() {
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span className="ml-3 text-xl">Add Name here</span>
+            <img src={logo} className="w-10 h-10" />
+
+            <span className="ml-3 text-xl">Ecrew Digital Lanka </span>
           </a>
           <p className="mt-2 text-sm text-gray-500">
-            sample decription add here
+            “Quick and Quality guaranteed”{" "}
           </p>
         </div>
         <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
@@ -205,7 +196,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-b from-pink-500 to-red-500 ">
+      <div className="bg-sitetheme-blue">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-white text-sm text-center sm:text-left">
             © 2020 add here —
