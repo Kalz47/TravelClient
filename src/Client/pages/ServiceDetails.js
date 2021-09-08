@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import ServiceCard from "../components/Card/ServiceCard";
 import Footer from "./HomePage/Footer";
+import Typed from "react-typed";
 
 export default function ServiceDetails() {
   const [ispoup, setIspopup] = useState(false);
@@ -19,7 +20,19 @@ export default function ServiceDetails() {
           <div className=" m-auto">
             {" "}
             <h1 className="text-4xl text-white font-bold ">Our Services </h1>
-            <h1 className="text-2xl text-white  ">Add decription here </h1>
+            <h1 className="text-2xl text-white  ">
+              {" "}
+              <Typed
+                strings={[
+                  "Here you can find anything",
+                  "Here you can find anything",
+                  "Here you can find anything",
+                ]}
+                typeSpeed={40}
+                backSpeed={50}
+                loop
+              />{" "}
+            </h1>
           </div>
         </div>
       </div>

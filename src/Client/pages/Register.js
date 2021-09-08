@@ -213,17 +213,6 @@ const Register = ({ history, close }) => {
         <div className="content">
           <UserDetails close={close} />
         </div>
-        <div className="actions">
-          <button
-            className="button"
-            onClick={() => {
-              console.log("modal closed ");
-              close();
-            }}
-          >
-            close modal
-          </button>
-        </div>
       </div>
     </div>
   );

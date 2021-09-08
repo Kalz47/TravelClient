@@ -3,6 +3,7 @@ import "flip-card-wc";
 import "./style.css";
 import ServiceList from "../../components/ServiceList";
 import { Scrollbars } from "react-custom-scrollbars";
+import Typed from "react-typed";
 
 export default function ServicesHome() {
   return (
@@ -190,8 +191,16 @@ export default function ServicesHome() {
             </flip-card>
           </div>
         </div>
-        <h4 className="text-center font-thin text-xl mt-14 text-blue-900">
-          Tping Efect{" "}
+        <h4 className="text-center font-thin text-xl mt-14 text-blue-900 ">
+          <Typed
+            strings={[
+              "Here you can find anything",
+              "Here you can find anything",
+            ]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop
+          />
         </h4>
       </div>
     </div>
