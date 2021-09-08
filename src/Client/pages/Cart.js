@@ -1,7 +1,10 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+import Footer from "./HomePage/Footer";
+import Popup from "reactjs-popup";
+import Register from "./Register";
 
-export default function Cart() {
+export default function Cart({ close }) {
   return (
     <div className="md:relative lg:relative ">
       {" "}
@@ -178,18 +181,18 @@ export default function Cart() {
                   </p>
                   <div className="justify-center md:flex">
                     <form action="" method="POST">
-                      <div className="flex items-center w-full h-13 pl-3 bg-white bg-pink-100 border rounded-full">
+                      <div className="flex items-center w-full h-13 pl-3 bg-blue-50 rounded-full">
                         <input
                           type="coupon"
                           name="code"
                           id="coupon"
                           placeholder="Apply coupon"
                           value="90off"
-                          className="w-full bg-pink-100 outline-none appearance-none focus:outline-none active:outline-none"
+                          className="w-full outline-none appearance-none focus:outline-none active:outline-none bg-blue-50"
                         />
                         <button
                           type="submit"
-                          className="text-sm flex items-center px-3 py-1 text-white bg-pink-500 rounded-full outline-none md:px-4 hover:bg-white hover:text-pink-500 focus:outline-none active:outline-none"
+                          className="  text-sm flex items-center px-3 py-1 text-white bg-sitetheme-blue rounded-full outline-none md:px-4 hover:bg-white hover:text-sitetheme-blue border border-sitetheme-blue focus:outline-none active:outline-none"
                         >
                           <svg
                             aria-hidden="true"
@@ -289,24 +292,34 @@ export default function Cart() {
                       17,859.3€
                     </div>
                   </div>
-                  <a href="#">
-                    <button className="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-pink-500 rounded-full shadow item-center hover:bg-white hover:text-pink-500 focus:shadow-outline focus:outline-none">
-                      <svg
-                        aria-hidden="true"
-                        data-prefix="far"
-                        data-icon="credit-card"
-                        className="w-8"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 576 512"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M527.9 32H48.1C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48.1 48h479.8c26.6 0 48.1-21.5 48.1-48V80c0-26.5-21.5-48-48.1-48zM54.1 80h467.8c3.3 0 6 2.7 6 6v42H48.1V86c0-3.3 2.7-6 6-6zm467.8 352H54.1c-3.3 0-6-2.7-6-6V256h479.8v170c0 3.3-2.7 6-6 6zM192 332v40c0 6.6-5.4 12-12 12h-72c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12zm192 0v40c0 6.6-5.4 12-12 12H236c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12z"
-                        />
-                      </svg>
-                      <span className="ml-2 mt-5px">Procceed to checkout</span>
-                    </button>
-                  </a>
+
+                  <Popup
+                    trigger={
+                      // <button className="button">Procceed to checkout </button>
+                      <button className="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-sitetheme-blue rounded-full shadow item-center hover:bg-white hover:text-sitetheme-blue border border-sitetheme-blue focus:shadow-outline focus:outline-none">
+                        <svg
+                          aria-hidden="true"
+                          data-prefix="far"
+                          data-icon="credit-card"
+                          className="w-8"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M527.9 32H48.1C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48.1 48h479.8c26.6 0 48.1-21.5 48.1-48V80c0-26.5-21.5-48-48.1-48zM54.1 80h467.8c3.3 0 6 2.7 6 6v42H48.1V86c0-3.3 2.7-6 6-6zm467.8 352H54.1c-3.3 0-6-2.7-6-6V256h479.8v170c0 3.3-2.7 6-6 6zM192 332v40c0 6.6-5.4 12-12 12h-72c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12zm192 0v40c0 6.6-5.4 12-12 12H236c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12z"
+                          />
+                        </svg>
+                        <span className="ml-2 mt-5px">
+                          Procceed to checkout
+                        </span>
+                      </button>
+                    }
+                    modal
+                    nested
+                  >
+                    {(close) => <Register close={close} />}
+                  </Popup>
                 </div>
               </div>
             </div>

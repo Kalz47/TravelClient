@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         sitetheme: {
           blue: "#000066",
-          // default: "#5c6ac4",
+          lightblue: "##7D7DB1",
         },
       },
     },

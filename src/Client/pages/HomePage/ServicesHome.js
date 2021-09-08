@@ -49,18 +49,18 @@ export default function ServicesHome() {
                     <ServiceList index="3." Topic="Topic" />{" "}
                     <ServiceList index="4." Topic="Topic" />{" "}
                     <ServiceList index="5." Topic="Topic" />{" "}
-                    <ServiceList index="1." Topic="Topic" />{" "}
-                    <ServiceList index="2." Topic="Topic" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="4." Topic="Topic" />{" "}
-                    <ServiceList index="5." Topic="Topic" />{" "}
-                    <ServiceList index="1." Topic="Topic" />{" "}
-                    <ServiceList index="2." Topic="Topic" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="4." Topic="Topic" />{" "}
-                    <ServiceList index="5." Topic="Topic" />{" "}
+                    <ServiceList index="6." Topic="Topic" />{" "}
+                    <ServiceList index="7." Topic="Topic" />{" "}
+                    <ServiceList index="8." Topic="Topic" />{" "}
+                    <ServiceList index="9." Topic="Topic" />{" "}
+                    <ServiceList index="10." Topic="Topic" />{" "}
+                    <ServiceList index="11." Topic="Topic" />{" "}
+                    <ServiceList index="12." Topic="Topic" />{" "}
+                    <ServiceList index="13." Topic="Topic" />{" "}
+                    <ServiceList index="14." Topic="Topic" />{" "}
+                    <ServiceList index="15." Topic="Topic" />{" "}
+                    <ServiceList index="16." Topic="Topic" />{" "}
+                    <ServiceList index="17." Topic="Topic" />{" "}
                   </Scrollbars>
                 </div>
               </div>
@@ -83,30 +83,38 @@ export default function ServicesHome() {
                       Pretium lectus quam id leo in vitae turpis. Mattis
                       pellentesque id nibh tortor id.
                     </p>
-                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-sitetheme-blue text-white tracking-widest hover:bg-white border-2 hover:text-sitetheme-blue hover:border-sitetheme-blue transition duration-200">
+                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-sitetheme-blue text-white tracking-widest hover:bg-white border hover:text-sitetheme-blue hover:border-sitetheme-blue transition duration-200">
                       MORE
                     </button>
                   </div>
                 </div>{" "}
               </div>
               <div slot="back">
-                <div className="rounded-xl shadow-lg hover:shadow-xl h-screen p-4">
-                  <img
-                    className="w-64"
-                    src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg"
-                    alt=""
-                  />
-                  <div className="mt-4 text-sitetheme-blue text-center">
-                    <h1 className="text-xl font-bold">Add Service Here</h1>
-                    <p className="mt-4 text-gray-600">
-                      Pretium lectus quam id leo in vitae turpis. Mattis
-                      pellentesque id nibh tortor id.
-                    </p>
-                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-sitetheme-blue text-white tracking-widest hover:bg-white border-2 hover:text-sitetheme-blue hover:border-sitetheme-blue transition duration-200">
-                      MORE
-                    </button>
-                  </div>
-                </div>{" "}
+                <h6 className="flex justify-center text-sitetheme-blue py-2 text-xl font-sans font-semibold">
+                  Hair Services
+                </h6>
+                <div className="space-y-4 p-4">
+                  <Scrollbars style={{ width: 250, height: 500 }}>
+                    <ServiceList index="1." Topic="Topic" />{" "}
+                    <ServiceList index="2." Topic="Topic" />{" "}
+                    <ServiceList index="3." Topic="Topic" />{" "}
+                    <ServiceList index="3." Topic="Topic" />{" "}
+                    <ServiceList index="4." Topic="Topic" />{" "}
+                    <ServiceList index="5." Topic="Topic" />{" "}
+                    <ServiceList index="6." Topic="Topic" />{" "}
+                    <ServiceList index="7." Topic="Topic" />{" "}
+                    <ServiceList index="8." Topic="Topic" />{" "}
+                    <ServiceList index="9." Topic="Topic" />{" "}
+                    <ServiceList index="10." Topic="Topic" />{" "}
+                    <ServiceList index="11." Topic="Topic" />{" "}
+                    <ServiceList index="12." Topic="Topic" />{" "}
+                    <ServiceList index="13." Topic="Topic" />{" "}
+                    <ServiceList index="14." Topic="Topic" />{" "}
+                    <ServiceList index="15." Topic="Topic" />{" "}
+                    <ServiceList index="16." Topic="Topic" />{" "}
+                    <ServiceList index="17." Topic="Topic" />{" "}
+                  </Scrollbars>
+                </div>
               </div>
             </flip-card>
           </div>
@@ -146,30 +154,38 @@ export default function ServicesHome() {
                       Pretium lectus quam id leo in vitae turpis. Mattis
                       pellentesque id nibh tortor id.
                     </p>
-                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-sitetheme-blue text-white tracking-widest hover:bg-white border-2 hover:text-sitetheme-blue hover:border-sitetheme-blue transition duration-200">
+                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-sitetheme-blue text-white tracking-widest hover:bg-white border hover:text-sitetheme-blue hover:border-sitetheme-blue transition duration-200">
                       MORE
                     </button>
                   </div>
                 </div>{" "}
               </div>
               <div slot="back">
-                <div className="rounded-xl shadow-lg hover:shadow-xl h-screen p-4">
-                  <img
-                    className="w-64"
-                    src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/a17abde8d83650a582a28432/users-with-speech-bubbles-vector_53876-82250.jpg"
-                    alt=""
-                  />
-                  <div className="mt-4 text-sitetheme-blue text-center">
-                    <h1 className="text-xl font-bold">Add Service Here</h1>
-                    <p className="mt-4 text-gray-600">
-                      Pretium lectus quam id leo in vitae turpis. Mattis
-                      pellentesque id nibh tortor id.
-                    </p>
-                    <button className="mt-8 mb-4 py-2 px-14 rounded-full bg-sitetheme-blue text-white tracking-widest hover:bg-white border-2 hover:text-sitetheme-blue hover:border-sitetheme-blue transition duration-200">
-                      MORE
-                    </button>
-                  </div>
-                </div>{" "}
+                <h6 className="flex justify-center text-sitetheme-blue py-2 text-xl font-sans font-semibold">
+                  Hair Services
+                </h6>
+                <div className="space-y-4 p-4">
+                  <Scrollbars style={{ width: 250, height: 500 }}>
+                    <ServiceList index="1." Topic="Topic" />{" "}
+                    <ServiceList index="2." Topic="Topic" />{" "}
+                    <ServiceList index="3." Topic="Topic" />{" "}
+                    <ServiceList index="3." Topic="Topic" />{" "}
+                    <ServiceList index="4." Topic="Topic" />{" "}
+                    <ServiceList index="5." Topic="Topic" />{" "}
+                    <ServiceList index="6." Topic="Topic" />{" "}
+                    <ServiceList index="7." Topic="Topic" />{" "}
+                    <ServiceList index="8." Topic="Topic" />{" "}
+                    <ServiceList index="9." Topic="Topic" />{" "}
+                    <ServiceList index="10." Topic="Topic" />{" "}
+                    <ServiceList index="11." Topic="Topic" />{" "}
+                    <ServiceList index="12." Topic="Topic" />{" "}
+                    <ServiceList index="13." Topic="Topic" />{" "}
+                    <ServiceList index="14." Topic="Topic" />{" "}
+                    <ServiceList index="15." Topic="Topic" />{" "}
+                    <ServiceList index="16." Topic="Topic" />{" "}
+                    <ServiceList index="17." Topic="Topic" />{" "}
+                  </Scrollbars>
+                </div>
               </div>
             </flip-card>
           </div>

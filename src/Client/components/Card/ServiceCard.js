@@ -27,7 +27,7 @@ export default function ServiceCard() {
         </div>{" "} */}
         <Popup
           trigger={
-            <button className="button flex  w-40 justify-center mb-4 py-2 px-2 bg-sitetheme-blue text-white rounded-full">
+            <button className="button flex  w-40 justify-center mb-4 py-2 px-2 rounded-full bg-sitetheme-blue text-white  hover:bg-white hover:text-sitetheme-blue border hover:border-sitetheme-blue">
               {" "}
               Vivew More{" "}
             </button>
@@ -37,9 +37,9 @@ export default function ServiceCard() {
         >
           {(close) => (
             <div className="modal">
-              <button className="close" onClick={close}>
+              {/* <button className="close" onClick={close}>
                 &times;
-              </button>
+              </button> */}
               <SingleService close={close} />
               {/* <div className="content">
               {" "}

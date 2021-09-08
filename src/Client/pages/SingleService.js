@@ -4,7 +4,29 @@ export default function SingleService({ close }) {
   return (
     // <div className=" text-gray-600 body-font overflow-hidden bg-pink-100">
     //   <div className="container px-5 py-24 mx-auto ">
-    <div className="lg:w-4/5 mx-auto flex flex-wrap bg-white rounded overflow-hidden shadow-lg pin-r pin-y">
+    <div className="lg:w-4/5 mx-auto flex flex-wrap bg-white rounded overflow-hidden shadow-lg pin-r pin-y relative ">
+      <button
+        className=" text-gray-300  absolute top-2 right-2"
+        onClick={() => {
+          // console.log("modal closed ");
+          close();
+        }}
+      >
+        {" "}
+        <svg
+          class="w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+
       <img
         alt="ecommerce"
         className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
@@ -25,7 +47,7 @@ export default function SingleService({ close }) {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              className="w-4 h-4 text-pink-500"
+              className="w-4 h-4 text-sitetheme-blue"
               viewBox="0 0 24 24"
             >
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -36,7 +58,7 @@ export default function SingleService({ close }) {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              className="w-4 h-4 text-pink-500"
+              className="w-4 h-4 text-sitetheme-blue"
               viewBox="0 0 24 24"
             >
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -47,7 +69,7 @@ export default function SingleService({ close }) {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              className="w-4 h-4 text-pink-500"
+              className="w-4 h-4 text-sitetheme-blue"
               viewBox="0 0 24 24"
             >
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -58,7 +80,7 @@ export default function SingleService({ close }) {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              className="w-4 h-4 text-pink-500"
+              className="w-4 h-4 text-sitetheme-blue"
               viewBox="0 0 24 24"
             >
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -69,7 +91,7 @@ export default function SingleService({ close }) {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              className="w-4 h-4 text-pink-500"
+              className="w-4 h-4 text-sitetheme-blue"
               viewBox="0 0 24 24"
             >
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
@@ -77,7 +99,7 @@ export default function SingleService({ close }) {
             <span className="text-gray-600 ml-3">4 Reviews</span>
           </span>
           <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
-            <a className="text-pink-500">
+            <a className="text-sitetheme-blue">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -89,7 +111,7 @@ export default function SingleService({ close }) {
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
               </svg>
             </a>
-            <a className="text-pink-500">
+            <a className="text-sitetheme-blue">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -101,7 +123,7 @@ export default function SingleService({ close }) {
                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
               </svg>
             </a>
-            <a className="text-pink-500">
+            <a className="text-sitetheme-blue">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -161,19 +183,10 @@ export default function SingleService({ close }) {
             </span>
           </div>
           <div>
-            <button className="flex w-40 justify-center py-3 px-6 bg-pink-500 text-white rounded-full ">
+            <button className="flex w-40 justify-center py-3 px-6  rounded-full bg-sitetheme-blue text-white  hover:bg-white hover:text-sitetheme-blue border hover:border-sitetheme-blue">
               Add
             </button>
           </div>
-          <button
-            className="button"
-            onClick={() => {
-              // console.log("modal closed ");
-              close();
-            }}
-          >
-            close modal
-          </button>
         </div>
       </div>
     </div>
