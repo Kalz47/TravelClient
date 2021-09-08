@@ -4,107 +4,6 @@ import logo from "../../images/logo.png";
 
 export default function Footer() {
   return (
-    // <footer
-    //   className="footer-1 text-white py-8 sm:py-12"
-    //   style={{
-    //     backgroundImage: `url("https://familycars.lk/static/media/background_footer1.57bfa518.jpg")`,
-    //   }}
-    // >
-    //   <div className="container mx-auto px-4">
-    //     <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
-    //       <div className="px-4 sm:w-1/2 md:w-1/4 ">
-    //         <h5 className="text-xl font-bold mb-6">Contact</h5>
-    //         <ul className="list-none footer-links">
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Address{" "}
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Tel{" "}
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Email{" "}
-    //             </Link>
-    //           </li>
-    //         </ul>
-    //       </div>
-    //       <div className="px-4 sm:w-1/2 md:w-1/4  mt-8 sm:mt-0">
-    //         <h5 className="text-xl font-bold mb-6">Information</h5>
-    //         <ul className="list-none footer-links">
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               About US
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               FAQ{" "}
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Privecy Policy{" "}
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Terms & Conditions{" "}
-    //             </Link>
-    //           </li>
-    //         </ul>
-    //       </div>
-    //       <div className="px-4 sm:w-1/2 md:w-1/4  mt-8 md:mt-0">
-    //         <h5 className="text-xl font-bold mb-6">Social</h5>
-    //         <ul className="list-none footer-links">
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               FaceBook
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Twitter
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Instergram
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Linkedin{" "}
-    //             </Link>
-    //           </li>
-    //         </ul>
-    //       </div>
-    //       <div className="px-4 sm:w-1/2 md:w-1/4  mt-8 md:mt-0">
-    //         <h5 className="text-xl font-bold mb-6">My Account</h5>
-    //         <ul className="list-none footer-links">
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Login
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className="no-underline hover:text-pink-500">
-    //               Register{" "}
-    //             </Link>
-    //           </li>
-    //           <li className="mb-2">
-    //             <Link to="/" className=" no-underline  hover:text-pink-500">
-    //               Contact Us
-    //             </Link>
-    //           </li>
-    //         </ul>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </footer>
     <footer className="text-gray-600 body-font bg-white">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
@@ -124,54 +23,36 @@ export default function Footer() {
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
               </li>
             </nav>
           </div>
@@ -181,16 +62,114 @@ export default function Footer() {
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
+              </li>
+            </nav>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+              CATEGORIES
+            </h2>
+            <nav className="list-none mb-10">
+              <li>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
+              </li>
+            </nav>
+          </div>
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+              CATEGORIES
+            </h2>
+            <nav className="list-none mb-10">
+              <li>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className=" no-underline text-gray-600  hover:text-sitetheme-blue"
+                >
+                  Contact Us
+                </Link>{" "}
               </li>
             </nav>
           </div>
