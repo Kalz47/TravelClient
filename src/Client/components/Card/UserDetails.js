@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function UserDetails({ close }) {
+export default function UserDetails({ close, userValues, handleChange }) {
+  const { name } = userValues;
   return (
     <div>
       {/* <!-- component --> */}
@@ -34,8 +35,10 @@ export default function UserDetails({ close }) {
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="fullname"
+              name="name"
               placeholder="Full Name"
+              value={name}
+              onChange={handleChange}
             />
             <input
               type="text"
