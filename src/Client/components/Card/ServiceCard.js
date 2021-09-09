@@ -5,58 +5,109 @@ import "./style.css";
 
 export default function ServiceCard() {
   return (
-    <div className="rounded overflow-hidden shadow-lg transition duration-500 transform hover:scale-105 cursor-pointer">
-      {/* <img className="w-full" src="/mountain.jpg" alt="Mountain" /> */}
-      <img
-        className="w-full"
-        src={`https://d39l2hkdp2esp1.cloudfront.net/img/photo/130102/130102_00_2x.jpg`}
-        alt="logo"
-      />
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">Service Topic</div>
-        <p className="text-gray-700 text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-          nihil.
-        </p>
-      </div>
-      <div className="px-6 pt-4 pb-2 flex justify-center">
-        {" "}
-        {/* <div className="flex  w-40 justify-center mb-4 py-2 px-2 bg-pink-500 text-white rounded-full">
-          <button className="text-lg text-md ">View More</button>
-        </div>{" "} */}
-        <Popup
-          trigger={
-            <button className="button flex  w-40 justify-center mb-4 py-2 px-2 rounded-full bg-sitetheme-blue text-white  hover:bg-white hover:text-sitetheme-blue border hover:border-sitetheme-blue">
-              {" "}
-              Vivew More{" "}
-            </button>
-          }
-          modal
-          nested
-        >
-          {(close) => (
-            <div className="modal">
-              {/* <button className="close" onClick={close}>
-                &times;
-              </button> */}
-              <SingleService close={close} />
-              {/* <div className="content">
-              {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a
-              nostrum. Dolorem, repellat quidem ut, minima sint vel eveniet
-              quibusdam voluptates delectus doloremque, explicabo tempore dicta
-              adipisci fugit amet dignissimos?
-              <br />
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consequatur sit commodi beatae optio voluptatum sed eius cumque,
-              delectus saepe repudiandae explicabo nemo nam libero ad,
-              doloribus, voluptas rem alias. Vitae?
-            </div> */}
+    <>
+      <div className="relative min-h-screen flex flex-col items-center justify-center ">
+        <div className="container">
+          <div className="max-w-md w-full bg-white shadow-lg rounded-xl p-6">
+            <div className="flex flex-col ">
+              <div className="">
+                <div className="relative h-62 w-full mb-3">
+                  <div className="absolute flex flex-col top-0 right-0 p-3"></div>
+                  <img
+                    src="https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2059&q=80"
+                    alt="Just a flower"
+                    className=" w-full   object-fill  rounded-2xl"
+                  />
+                </div>
+                <div className="flex-auto justify-evenly">
+                  <div className="flex flex-wrap ">
+                    <div className="w-full flex-none text-sm flex items-center text-gray-600">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-sitetheme-blue mr-1"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <span className="text-sitetheme-blue font-bold whitespace-nowrap mr-3">
+                        4.60
+                      </span>
+                      <span className="mr-2 text-gray-400">45.6K Ratings</span>
+                    </div>
+                    <div className="flex items-center w-full justify-between min-w-0 ">
+                      <h2 className="text-lg mr-2 text-gray-400">2500 LKR</h2>
+                      <h2 className="text-lg mr-auto text-gray-400 line-through">
+                        2500 LKR
+                      </h2>
+                      <div className="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
+                        INSTOCK
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="lg:flex py-2 text-sm text-gray-600">
+                    <div className="w-full flex-none text-sm flex items-center text-gray-600">
+                      <ul class="list-disc">
+                        <li>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit
+                        </li>
+                        <li>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit
+                        </li>
+                        <li>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="flex-1 inline-flex items-center mb-3"></div>
+                  </div>
+                  <div className="flex space-x-2 text-sm font-medium justify-between pt-2">
+                    <Popup
+                      trigger={
+                        <div className="flex flex-between">
+                          <button className="no-underline text-sitetheme-blue">
+                            {" "}
+                            Vivew More{" "}
+                          </button>
+
+                          <svg
+                            className="w-6 h-6 mt-3 cursor-pointer text-sitetheme-blue ml-2 "
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </div>
+                      }
+                      modal
+                      nested
+                    >
+                      {(close) => (
+                        <div className="modal">
+                          <SingleService close={close} />
+                        </div>
+                      )}
+                    </Popup>
+
+                    <button className="mt-2 transition ease-in duration-300 inline-flex items-center text-sm font-medium md:mb-0 bg-sitetheme-blue px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:text-sitetheme-blue hover:bg-white border hover:border-sitetheme-blue">
+                      <span>Add Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          )}
-        </Popup>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
