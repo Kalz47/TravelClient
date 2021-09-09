@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import ServiceCard from "../components/Card/ServiceCard";
 import Footer from "./HomePage/Footer";
 import Typed from "react-typed";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllPosts, getService } from "../../actions/service";
 
 export default function ServiceDetails() {
+  const dispatch = useDispatch();
   const [ispoup, setIspopup] = useState(false);
+
+  useEffect(() => {
+    dispatch(getAllPosts());
+  }, []);
 
   return (
     <div className="">
