@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import NavBar from "../components/NavBar";
 import ServiceCard from "../components/Card/ServiceCard";
 import Footer from "./HomePage/Footer";
 import { Scrollbars } from "react-custom-scrollbars";
 import ServiceCategorySelectBut from "../components/buttons/ServiceCategorySelectBut";
 import ServiceImage from "../../Client/images/services/salon working-01.png";
+import { getAllPosts } from "../../actions/service";
 
-export default function ServiceDetails({ content }) {
+export default function ServiceDetails() {
+  const dispatch = useDispatch();
   const [ispoup, setIspopup] = useState(false);
+
+  useEffect(() => {
+    dispatch(getAllPosts());
+  }, []);
 
   return (
     <>

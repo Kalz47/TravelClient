@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "./HomePage/Footer";
 import Popup from "reactjs-popup";
 import Register from "./Register";
+import UserDetails from "../components/Card/UserDetails";
 
 export default function Cart({ close }) {
+  const [userValues, setUserValues] = useState({
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    province: "",
+    phone: "",
+  });
+
+  const { name, email, address, city, province, phone } = userValues;
+  const [location, setLocation] = useState({
+    long: "",
+    lat: "",
+  });
+  const handleChange = (e) => {
+    setUserValues({ ...userValues, [e.target.name]: e.target.value });
+  };
+  const { long, lat } = location;
   return (
     <div className="md:relative lg:relative ">
       {" "}
@@ -25,7 +44,7 @@ export default function Cart({ close }) {
       </div>
       {/* cart start */}
       <div className="flex justify-center md:absolute md:top-72 md:left-36 lg:absolute lg:top-72 lg:left-36 lg:pb-40 md:pb-40">
-        <div className="flex flex-col w-full p-8 text-gray-800 bg-white ounded overflow-hidden shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
+        <div className="flex flex-col w-full p-8 text-gray-800 bg-white rounded overflow-hidden shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
           <div className="flex-1">
             <table className="w-full text-sm lg:text-base" cellspacing="0">
               <thead>
@@ -318,7 +337,13 @@ export default function Cart({ close }) {
                     modal
                     nested
                   >
-                    {(close) => <Register close={close} />}
+                    {(close) => (
+                      <UserDetails
+                        close={close}
+                        userValues={userValues}
+                        handleChange={handleChange}
+                      />
+                    )}
                   </Popup>
                 </div>
               </div>
