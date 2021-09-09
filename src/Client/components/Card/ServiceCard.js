@@ -43,16 +43,15 @@ export default function ServiceCard() {
                       <div className="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
                         INSTOCK
                       </div>
+                      {/* <div className="flex items-center bg-red-500 text-white text-xs px-2 py-1 ml-3 rounded-lg">
+                        OUT OF STOCK
+                      </div> */}
                     </div>
                   </div>
 
                   <div className="lg:flex py-2 text-sm text-gray-600">
                     <div className="w-full flex-none text-sm flex items-center text-gray-600">
                       <ul class="list-disc">
-                        <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit
-                        </li>
                         <li>
                           Lorem ipsum dolor sit amet, consectetur adipisicing
                           elit
@@ -75,7 +74,7 @@ export default function ServiceCard() {
                           </button>
 
                           <svg
-                            className="w-6 h-6 mt-3 cursor-pointer text-sitetheme-blue ml-2 "
+                            className="w-5 h-5 mt-4 cursor-pointer text-sitetheme-blue ml-1 "
                             fill="currentColor"
                             viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg"
