@@ -7,10 +7,11 @@ import { Scrollbars } from "react-custom-scrollbars";
 import ServiceCategorySelectBut from "../components/buttons/ServiceCategorySelectBut";
 import ServiceImage from "../../Client/images/services/salon working-01.png";
 import { getAllPosts } from "../../actions/service";
+import ServiceCardTopic from "../components/Card/ServiceCardTopic";
 
 export default function ServiceDetails() {
   const dispatch = useDispatch();
-  const [ispoup, setIspopup] = useState(false);
+  // const [ispoup, setIspopup] = useState(false);
 
   useEffect(() => {
     dispatch(getAllPosts());
@@ -65,11 +66,14 @@ export default function ServiceDetails() {
           <Scrollbars style={{ height: 800 }}>
             <ServiceCard />
             <ServiceCard />
+            <ServiceCardTopic Topic="Face" />
+            <ServiceCard />
+            <ServiceCard />
+            <ServiceCardTopic Topic="Hair" />
             <ServiceCard />
             <ServiceCard />
             <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
+            <ServiceCardTopic Topic="Skin" />
             <ServiceCard />
           </Scrollbars>{" "}
         </div>
