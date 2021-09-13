@@ -44,7 +44,7 @@ export default function ServicesHome() {
                 </h6>
                 <div className="space-y-4 p-4">
                   <Scrollbars style={{ width: 250, height: 500 }}>
-                    <ServiceList index="1." Topic="Topic" />{" "}
+                    <ServiceList index="1." Topic="Hair" navi="hair" />{" "}
                     <ServiceList index="2." Topic="Topic" />{" "}
                     <ServiceList index="3." Topic="Topic" />{" "}
                     <ServiceList index="3." Topic="Topic" />{" "}

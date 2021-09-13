@@ -13,7 +13,7 @@ export default function Welcome() {
       <div className="md:flex items-center pl-16 ">
         <div className="">
           <h1 className="lg:text-5xl text-sitetheme-blue  font-bold leading-tight text-3xl">
-            Ecrew Digital Lanka{" "}
+            ECrew Digital Lanka{" "}
           </h1>
           <p className="mt-4 text-lg font-normal text-sitetheme-blue">
             <Typed

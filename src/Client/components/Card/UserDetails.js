@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function UserDetails({ close, userValues, handleChange }) {
-  const { name } = userValues;
+  const { name, email, address, city, province, phone, location } = userValues;
   return (
     <div>
       {/* <!-- component --> */}
@@ -43,37 +43,49 @@ export default function UserDetails({ close, userValues, handleChange }) {
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="fullname"
+              name="address"
+              value={address}
+              onChange={handleChange}
               placeholder="Enter Address"
             />
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="fullname"
+              name="city"
+              value={city}
+              onChange={handleChange}
               placeholder="Enter city"
             />
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="fullname"
+              name="province"
+              value={province}
+              onChange={handleChange}
               placeholder="Enter Province"
             />
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="fullname"
+              name="phone"
+              value={phone}
+              onChange={handleChange}
               placeholder="Enter Phone Number"
             />
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="fullname"
+              name="email"
+              value={email}
+              onChange={handleChange}
               placeholder="Enter Email"
             />
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="fullname"
+              name="location"
+              value={location}
+              onChange={location}
               placeholder="Enter location"
             />
             <button

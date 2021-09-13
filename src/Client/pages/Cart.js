@@ -342,6 +342,7 @@ export default function Cart({ close }) {
                         close={close}
                         userValues={userValues}
                         handleChange={handleChange}
+                        location={location}
                       />
                     )}
                   </Popup>

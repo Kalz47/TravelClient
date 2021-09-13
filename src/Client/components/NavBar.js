@@ -7,7 +7,7 @@ export default function NavBar({ fixed }) {
 
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-sitetheme-blue">
+      {/* <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-sitetheme-blue">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link to="/" className="" href="#pablo">
@@ -17,9 +17,7 @@ export default function NavBar({ fixed }) {
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <i className="fas fa-bars"></i>
-            </button>
+            ></button>
           </div>
 
           <div
@@ -42,7 +40,26 @@ export default function NavBar({ fixed }) {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
+
+      <div className="h-14 flex items-center px-4 justify-between bg-sitetheme-blue text-white">
+        <Link to="/" className="" href="#pablo">
+          <img src={logo} className="w-10 h-10 shadow-md " />
+        </Link>{" "}
+        <div className="space-x-6  items-center sm:block hidden">
+          <Link to="/">Home</Link>
+          <Link to="/login">Join</Link>
+          <Link to="/aboutUs">About</Link>
+          <Link to="/contactUs">Contact</Link>
+        </div>
+        <button className="sm:hidden block">
+          <i className="fas fa-bars"></i>
+        </button>
+      </div>
     </>
   );
+}
+
+{
+  /* <i className="fas fa-bars"></i> */
 }
