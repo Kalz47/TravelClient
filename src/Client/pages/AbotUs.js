@@ -107,13 +107,15 @@ export default function AbotUs() {
             </h2>
             <span className="inline-block h-1 w-10 rounded bg-sitetheme-blue mt-8 mb-6"></span>
             <p className="leading-relaxed text-lg">
-              Transparent pricing <br />
+              <h1 className="font-bold mb-0">Transparent pricing</h1> <br />
               We show you the exact fixed(estimated) prices of the service
               providers with no hidden costs. You can view all the details to
-              evaluate which options you would like best. Professionals Only
+              evaluate which options you would like best. <br />
+              <h1 className="font-bold mb-0">Professionals Only</h1> <br />
               <br />
               We provide only the best. We have hand-picked experienced and
-              well-trained professionals just for you. Trust Assured
+              well-trained professionals just for you.
+              <h1 className="font-bold mb-0">Trust Assured</h1> <br />
               <br />
               We will assure great quality in a faster time. We aim to please
               and provide what’s best for you throughout the service you
