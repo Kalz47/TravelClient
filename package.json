@@ -19,6 +19,7 @@
     "react-iframe": "^1.8.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.1",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "4.0.3",
     "react-typed": "^1.2.0",
     "reactjs-popup": "^2.0.5",
