@@ -7,13 +7,11 @@ import { Scrollbars } from "react-custom-scrollbars";
 import ServiceCategorySelectBut from "../components/buttons/ServiceCategorySelectBut";
 import ServiceImage from "../../Client/images/services/salon working-01.png";
 import { getAllServices } from "../../actions/service";
+import ServiceCardTopic from "../components/Card/ServiceCardTopic";
 
 export default function ServiceDetails() {
   const dispatch = useDispatch();
-  const [ispoup, setIspopup] = useState(false);
-  const { services } = useSelector((state) => state.service);
-
-  console.log(services);
+  // const [ispoup, setIspopup] = useState(false);
 
   useEffect(() => {
     dispatch(getAllServices());
@@ -21,7 +19,6 @@ export default function ServiceDetails() {
 
   return (
     <>
-      <NavBar />
       {/* <div
         className=" relative text-center w-full object-cover h-80 block mx-auto  sm:block sm:w-full"
         style={{
@@ -66,10 +63,18 @@ export default function ServiceDetails() {
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 ">
           <Scrollbars style={{ height: 800 }}>
-            {services.map((s) => (
-              <ServiceCard />
-            ))}
-          </Scrollbars>
+            <ServiceCard />
+            <ServiceCard />
+            <ServiceCardTopic Topic="Face" />
+            <ServiceCard />
+            <ServiceCard />
+            <ServiceCardTopic Topic="Hair" />
+            <ServiceCard />
+            <ServiceCard />
+            <ServiceCard />
+            <ServiceCardTopic Topic="Skin" />
+            <ServiceCard />
+          </Scrollbars>{" "}
         </div>
 
         {/* <!--Card 3--> */}

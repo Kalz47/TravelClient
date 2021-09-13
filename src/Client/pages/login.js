@@ -32,7 +32,6 @@ const Login = ({ history }) => {
 
   return (
     <div className="bg-hero-pattern bg-no-repeat bg-cover bg-center blur-lg">
-      <NavBar />
       {/* <div className="md:px-40 sm:px-20 px-10">
         <div className="flex h-screen ">
           <div className="m-auto">

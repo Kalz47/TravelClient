@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function ServiceList({ index, Topic, navi }) {
   return (
@@ -7,12 +7,11 @@ export default function ServiceList({ index, Topic, navi }) {
       <span className="block">
         <div className="h-6 bg-white flex items-center border-b border-blue-100 py-4">
           <h1 className="text-sitetheme-blue">{index}</h1>
-          <Link
-            to={`/serviceDetails/#${navi}`}
-            className="ml-4 text-sitetheme-blue text-lg"
-          >
-            {Topic}
-          </Link>
+          <p className="ml-4 text-sitetheme-blue text-lg">
+            <HashLink smooth to={`/serviceDetails#${Topic}`}>
+              {Topic}{" "}
+            </HashLink>
+          </p>
         </div>
       </span>
     </div>

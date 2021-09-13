@@ -8,7 +8,6 @@ import OurTeam from "./HomePage/OurTeam";
 export default function Home() {
   return (
     <div>
-      <NavBar />
       <Welcome />
       <ServicesHome />
       <OurTeam />

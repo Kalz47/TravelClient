@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 
-export default function NavBar({ fixed }) {
+export default function NavBar({ click }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
 
   return (
@@ -52,7 +52,7 @@ export default function NavBar({ fixed }) {
           <Link to="/aboutUs">About</Link>
           <Link to="/contactUs">Contact</Link>
         </div>
-        <button className="sm:hidden block">
+        <button className="sm:hidden block" onClick={click}>
           <i className="fas fa-bars"></i>
         </button>
       </div>

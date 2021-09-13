@@ -6,7 +6,6 @@ import Footer from "./HomePage/Footer";
 export default function ContactUs() {
   return (
     <div>
-      <NavBar />
       <section class="text-gray-600 body-font relative">
         <div class="absolute inset-0 bg-pink-300">
           <Iframe

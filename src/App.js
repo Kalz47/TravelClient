@@ -25,10 +25,18 @@ import Reports from "./Admin/pages/subpages/Reports";
 import Services from "./Admin/pages/subpages/Services";
 import Settings from "./Admin/pages/subpages/Settings";
 import Staff from "./Admin/pages/subpages/Staff";
+import SideDrawer from "./Client/components/SideDrawer";
+import { useState } from "react";
+import NavBar from "./Client/components/NavBar";
+import Backdrop from "./Client/components/Backdrop";
 
 function App() {
+  const [sideToggle, setSideToggle] = useState(false);
   return (
     <BrowserRouter>
+      <NavBar click={() => setSideToggle(true)} />
+      <SideDrawer show={sideToggle} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <div>
         {/* client routes */}
         <Route path="/" exact component={Home}></Route>
