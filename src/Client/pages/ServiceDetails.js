@@ -52,13 +52,6 @@ export default function ServiceDetails() {
           <ServiceCategorySelectBut content="Hair" id="hair" />
           <ServiceCategorySelectBut content="contecontentcontentcontentnt" />
           <ServiceCategorySelectBut content="contecontentnt" />
-          <ServiceCategorySelectBut content="contcontentcontentcontentent  jkjjhkhkh" />
-          <ServiceCategorySelectBut content="contcontentcontentcontentent" />
-          <ServiceCategorySelectBut content="contcontetcontentent" />
-          <ServiceCategorySelectBut content="contcontentcotcontentent" />
-          <ServiceCategorySelectBut content="contcontentcontentcontentent" />
-          <ServiceCategorySelectBut content="contentent" />
-          <ServiceCategorySelectBut content="contcontentcotentent" />
         </div>
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 ">
