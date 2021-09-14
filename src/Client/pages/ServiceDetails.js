@@ -50,8 +50,8 @@ export default function ServiceDetails() {
         {/* <!--Card 1--> */}
         <div className="border-r border-gray-200 flex flex-col">
           <ServiceCategorySelectBut content="Hair" id="hair" />
-          <ServiceCategorySelectBut content="contecontentcontentcontentnt" />
-          <ServiceCategorySelectBut content="contecontentnt" />
+          <ServiceCategorySelectBut content="Skin" />
+          <ServiceCategorySelectBut content="Face" />
         </div>
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 ">
