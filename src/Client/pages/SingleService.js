@@ -3,13 +3,10 @@ import ReactPlayer from "react-player";
 
 export default function SingleService({ close }) {
   return (
-    // <div className=" text-gray-600 body-font overflow-hidden bg-pink-100">
-    //   <div className="container px-5 py-24 mx-auto ">
     <div className="lg:w-4/5 mx-auto flex flex-wrap bg-white rounded overflow-hidden shadow-lg pin-r pin-y relative ">
       <button
         className=" text-gray-300  absolute top-2 right-2"
         onClick={() => {
-          // console.log("modal closed ");
           close();
         }}
       >
@@ -27,7 +24,6 @@ export default function SingleService({ close }) {
           ></path>
         </svg>
       </button>
-
       <img
         alt="ecommerce"
         className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
@@ -200,7 +196,5 @@ export default function SingleService({ close }) {
         </div>
       </div>
     </div>
-    //   </div>
-    // </div>
   );
 }
