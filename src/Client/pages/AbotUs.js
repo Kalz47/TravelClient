@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import Typed from "react-typed";
 import Footer from "../pages/HomePage/Footer";
 
@@ -7,7 +6,6 @@ export default function AbotUs() {
   return (
     <>
       {" "}
-      <NavBar />
       <div
         className=" relative text-center w-full object-cover h-80 block mx-auto  sm:block sm:w-full"
         style={{

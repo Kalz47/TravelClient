@@ -36,7 +36,7 @@ export default function ContactUs() {
                 type="email"
                 id="email"
                 name="email"
-                class="w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                class="w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
             <div class="relative mb-4">
@@ -46,10 +46,10 @@ export default function ContactUs() {
               <textarea
                 id="message"
                 name="message"
-                class="w-full bg-white rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                class="w-full bg-white rounded border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-pink-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
               ></textarea>
             </div>
-            <button class="text-white bg-pink-500 border-2 hover:border-pink-500 py-2 px-6 focus:outline-none hover:bg-white hover:text-pink-500 text-lg rounded-full">
+            <button class="text-white bg-sitetheme-blue border-2 hover:border-sitetheme-blue py-2 px-6 focus:outline-none hover:bg-white hover:text-sitetheme-blue text-lg rounded-full">
               Button
             </button>
             <p class="text-xs text-gray-500 mt-3">

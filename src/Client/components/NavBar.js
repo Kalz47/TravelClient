@@ -46,11 +46,27 @@ export default function NavBar({ click }) {
         <Link to="/" className="" href="#pablo">
           <img src={logo} className="w-10 h-10 shadow-md " />
         </Link>{" "}
-        <div className="space-x-6  items-center sm:block hidden">
-          <Link to="/">Home</Link>
-          <Link to="/login">Join</Link>
-          <Link to="/aboutUs">About</Link>
-          <Link to="/contactUs">Contact</Link>
+        <div className="space-x-6  items-center sm:block hidden ">
+          <Link to="/">
+            {" "}
+            <i class="fas fa-home pr-2 mt-1"></i>
+            Home
+          </Link>
+          <Link to="/login">
+            {" "}
+            <i class="fas fa-sign-in-alt pr-2 mt-1 "></i>
+            Join
+          </Link>
+          <Link to="/aboutUs">
+            {" "}
+            <i class="far fa-address-card pr-2 mt-1"></i>
+            About
+          </Link>
+          <Link to="/contactUs">
+            {" "}
+            <i class="far fa-id-badge pr-2 mt-1"></i>
+            Contact
+          </Link>
         </div>
         <button className="sm:hidden block" onClick={click}>
           <i className="fas fa-bars"></i>

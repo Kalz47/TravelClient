@@ -7,7 +7,7 @@ import Typed from "react-typed";
 export default function Welcome() {
   return (
     <div
-      className="md:flex h-screen space-x-16 md:mr-0 mr-10"
+      className="md:flex md:h-screen space-x-16 md:mr-0 mr-10 object-cover w-full "
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="md:flex items-center pl-16 ">
