@@ -37,7 +37,7 @@ const Login = ({ history }) => {
           <div className="m-auto">
             <div className="border border-gray-200 rounded-lg">
               <div className="md:grid md:grid-cols-3">
-                <div className="md:col-span-1 md:border-r border-gray-200 border-r-0 p-6 bg-gradient-to-r  rounded-t-md from-pink-500 to-red-500 ">
+                <div className="md:col-span-1 md:border-r border-gray-200 border-r-0 p-6 bg-gradient-to-r  rounded-t-md from-sitetheme-blue to-red-500 ">
                   <h1 className="text-xl text-white">Hey.. Let's login</h1>
                   <h1 className="text-md text-white mt-4">
                     You can shear your knowledge with others and gain some
@@ -70,7 +70,7 @@ const Login = ({ history }) => {
                         <button
                           // type="submit"
                           // onClick={handleSubmit}
-                          className="py-2 px-4  border border-pink-500 rounded-full hover:bg-pink-500 hover:text-white text-gray-600 text-md"
+                          className="py-2 px-4  border border-sitetheme-blue rounded-full hover:bg-sitetheme-blue hover:text-white text-gray-600 text-md"
                         >
                           Login
                         </button>
@@ -91,7 +91,7 @@ const Login = ({ history }) => {
       <div className="md:px-40 sm:px-20 px-10 py-44">
         <div className="shadow-lg sm:flex">
           <div
-            className="sm:w-2/5 w-full bg-pink-500 bg-cover bg-center text-white"
+            className="sm:w-2/5 w-full bg-sitetheme-blue bg-cover bg-center text-white"
             // style="background-image: url('')"
           >
             <div className="p-8">
@@ -110,7 +110,7 @@ const Login = ({ history }) => {
                   Username
                 </label>
                 <input
-                  className="w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   name="email"
                   value={email}
                   onChange={handleChange}
@@ -119,7 +119,7 @@ const Login = ({ history }) => {
                   Password
                 </label>
                 <input
-                  className=" mb-6 w-full bg-white rounded-full border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className=" mb-6 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   name="password"
                   value={password}
                   onChange={handleChange}
@@ -128,7 +128,7 @@ const Login = ({ history }) => {
                 <button
                   // type="submit"
                   // onClick={handleSubmit}
-                  className="shadow-lg pt-3 pb-3 w-full text-white bg-pink-500 hover:bg-white hover:text-pink-500 rounded-full cursor-pointer border hover:border-pink-500"
+                  className="shadow-lg pt-3 pb-3 w-full text-white bg-sitetheme-blue hover:bg-white hover:text-sitetheme-blue rounded-full cursor-pointer border hover:border-sitetheme-blue"
                 >
                   Login
                 </button>
@@ -138,7 +138,7 @@ const Login = ({ history }) => {
                   Already have an account?{" "}
                   <a
                     href="#"
-                    className="no-underline text-pink-500 font-bold hover:text-pink-400"
+                    className="no-underline text-sitetheme-blue font-bold hover:text-blue-900"
                   >
                     Sign in
                   </a>

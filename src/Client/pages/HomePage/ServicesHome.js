@@ -47,21 +47,6 @@ export default function ServicesHome() {
                     <ServiceList index="1." Topic="Hair" />{" "}
                     <ServiceList index="2." Topic="Skin" />{" "}
                     <ServiceList index="3." Topic="Face" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="4." Topic="Topic" />{" "}
-                    <ServiceList index="5." Topic="Topic" />{" "}
-                    <ServiceList index="6." Topic="Topic" />{" "}
-                    <ServiceList index="7." Topic="Topic" />{" "}
-                    <ServiceList index="8." Topic="Topic" />{" "}
-                    <ServiceList index="9." Topic="Topic" />{" "}
-                    <ServiceList index="10." Topic="Topic" />{" "}
-                    <ServiceList index="11." Topic="Topic" />{" "}
-                    <ServiceList index="12." Topic="Topic" />{" "}
-                    <ServiceList index="13." Topic="Topic" />{" "}
-                    <ServiceList index="14." Topic="Topic" />{" "}
-                    <ServiceList index="15." Topic="Topic" />{" "}
-                    <ServiceList index="16." Topic="Topic" />{" "}
-                    <ServiceList index="17." Topic="Topic" />{" "}
                   </Scrollbars>
                 </div>
               </div>
@@ -97,23 +82,6 @@ export default function ServicesHome() {
                 <div className="space-y-4 p-4">
                   <Scrollbars style={{ width: 250, height: 500 }}>
                     <ServiceList index="1." Topic="Topic" />{" "}
-                    <ServiceList index="2." Topic="Topic" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="4." Topic="Topic" />{" "}
-                    <ServiceList index="5." Topic="Topic" />{" "}
-                    <ServiceList index="6." Topic="Topic" />{" "}
-                    <ServiceList index="7." Topic="Topic" />{" "}
-                    <ServiceList index="8." Topic="Topic" />{" "}
-                    <ServiceList index="9." Topic="Topic" />{" "}
-                    <ServiceList index="10." Topic="Topic" />{" "}
-                    <ServiceList index="11." Topic="Topic" />{" "}
-                    <ServiceList index="12." Topic="Topic" />{" "}
-                    <ServiceList index="13." Topic="Topic" />{" "}
-                    <ServiceList index="14." Topic="Topic" />{" "}
-                    <ServiceList index="15." Topic="Topic" />{" "}
-                    <ServiceList index="16." Topic="Topic" />{" "}
-                    <ServiceList index="17." Topic="Topic" />{" "}
                   </Scrollbars>
                 </div>
               </div>
@@ -168,23 +136,6 @@ export default function ServicesHome() {
                 <div className="space-y-4 p-4">
                   <Scrollbars style={{ width: 250, height: 500 }}>
                     <ServiceList index="1." Topic="Topic" />{" "}
-                    <ServiceList index="2." Topic="Topic" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="3." Topic="Topic" />{" "}
-                    <ServiceList index="4." Topic="Topic" />{" "}
-                    <ServiceList index="5." Topic="Topic" />{" "}
-                    <ServiceList index="6." Topic="Topic" />{" "}
-                    <ServiceList index="7." Topic="Topic" />{" "}
-                    <ServiceList index="8." Topic="Topic" />{" "}
-                    <ServiceList index="9." Topic="Topic" />{" "}
-                    <ServiceList index="10." Topic="Topic" />{" "}
-                    <ServiceList index="11." Topic="Topic" />{" "}
-                    <ServiceList index="12." Topic="Topic" />{" "}
-                    <ServiceList index="13." Topic="Topic" />{" "}
-                    <ServiceList index="14." Topic="Topic" />{" "}
-                    <ServiceList index="15." Topic="Topic" />{" "}
-                    <ServiceList index="16." Topic="Topic" />{" "}
-                    <ServiceList index="17." Topic="Topic" />{" "}
                   </Scrollbars>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import ReactPlayer from "react-player";
 
 export default function SingleService({ close }) {
   return (
@@ -186,6 +187,15 @@ export default function SingleService({ close }) {
             <button className="flex w-40 justify-center py-3 px-6  rounded-full bg-sitetheme-blue text-white  hover:bg-white hover:text-sitetheme-blue border hover:border-sitetheme-blue">
               Add
             </button>
+          </div>
+        </div>
+        <div className=" w-96 mt-10 mr-10 flex">
+          <div className="">
+            <ReactPlayer
+              width="90%"
+              height="90%"
+              url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+            />
           </div>
         </div>
       </div>
