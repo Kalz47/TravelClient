@@ -4,6 +4,8 @@ import Footer from "./HomePage/Footer";
 import Popup from "reactjs-popup";
 import Register from "./Register";
 import UserDetails from "../components/Card/UserDetails";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
 export default function Cart({ close }) {
   const [userValues, setUserValues] = useState({
@@ -24,10 +26,10 @@ export default function Cart({ close }) {
     setUserValues({ ...userValues, [e.target.name]: e.target.value });
   };
   const { long, lat } = location;
+
   return (
     <div className="md:relative lg:relative ">
       {" "}
-      <NavBar />
       <div
         className=" relative text-center w-full object-cover h-80 block mx-auto  sm:block sm:w-full"
         style={{
@@ -232,17 +234,39 @@ export default function Cart({ close }) {
                     </form>
                   </div>
                 </div>
-                <div className="p-4 mt-6 bg-gray-100 rounded-full">
-                  <h1 className="ml-2 font-bold uppercase">
+                <div className="p-4 mt-6">
+                  {/* <h1 className="ml-2 font-bold uppercase">
                     Instruction for seller
-                  </h1>
+                  </h1> */}
+                  <form className="w-full" noValidate>
+                    <TextField
+                      id="time"
+                      label="Add Your Time Here"
+                      type="time"
+                      defaultValue="09:30"
+                      className="w-full"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      inputProps={{
+                        step: 300, // 5 min
+                      }}
+                    />
+                  </form>
                 </div>
                 <div className="p-4">
-                  <p className="mb-4 italic">
-                    If you have some information for the seller you can leave
-                    them in the box below
-                  </p>
-                  <textarea className="w-full h-24 p-2 bg-gray-100 rounded"></textarea>
+                  <form className="w-full" noValidate>
+                    <TextField
+                      id="date"
+                      label="Select your Date Here"
+                      type="date"
+                      defaultValue="2019-05-24"
+                      className="w-full"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                    />
+                  </form>
                 </div>
               </div>
               <div className="lg:px-2 lg:w-1/2">
