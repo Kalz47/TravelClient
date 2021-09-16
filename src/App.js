@@ -8,9 +8,12 @@ import AboutUs from "./Client/pages/AbotUs";
 import ContactUs from "./Client/pages/ContactUs";
 import Infromation from "./Client/pages/Infromation";
 import Support from "./Client/pages/Support";
-import ServiceDetails from "./Client/pages/ServiceDetails";
 import Cart from "./Client/pages/Cart";
 import SingleService from "./Client/pages/SingleService";
+import ServiceDetails from "./Client/pages/ServiceDetails";
+import ServiceDetailsGents from "./Client/pages/ServiceDetails/ServiceDetailsGents";
+import ServiceDetailsKids from "./Client/pages/ServiceDetails/ServiceDetailsKids";
+import ServiceDetailsWomen from "./Client/pages/ServiceDetails/ServiceDetailsWomen";
 // admin routes
 import AdminLogin from "./Admin/pages/Login";
 import AdminDashboard from "./Admin/pages/Dashboard";
@@ -46,9 +49,24 @@ function App() {
         <Route path="/contactUs" exact component={ContactUs}></Route>
         <Route path="/infromation" exact component={Infromation}></Route>
         <Route path="/support" exact component={Support}></Route>
-        <Route path="/serviceDetails" exact component={ServiceDetails}></Route>
         <Route path="/cart" exact component={Cart}></Route>
         <Route path="/singleService" exact component={SingleService}></Route>
+        <Route path="/serviceDetails" exact component={ServiceDetails}></Route>
+        <Route
+          path="/ServiceDetailsGents"
+          exact
+          component={ServiceDetailsGents}
+        ></Route>
+        <Route
+          path="/ServiceDetailsWomen"
+          exact
+          component={ServiceDetailsWomen}
+        ></Route>
+        <Route
+          path="/ServiceDetailsKids"
+          exact
+          component={ServiceDetailsKids}
+        ></Route>
 
         {/* Admin routes */}
         <Route path="/admin/login" exact component={AdminLogin}></Route>
