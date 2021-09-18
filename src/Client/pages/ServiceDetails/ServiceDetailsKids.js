@@ -20,9 +20,18 @@ export default function ServiceDetailsKids() {
       <div className="md:h-full lg:h-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 mt-6">
         {/* <!--Card 1--> */}
         <div className="border-r border-gray-200 flex flex-col">
-          <ServiceCategorySelectBut content="Hair" id="hair" />
-          <ServiceCategorySelectBut content="Skin" />
-          <ServiceCategorySelectBut content="Face" />
+          <ServiceCategorySelectBut
+            content="Hair"
+            BaseUrl="ServiceDetailsKids"
+          />
+          <ServiceCategorySelectBut
+            content="Skin"
+            BaseUrl="ServiceDetailsKids"
+          />
+          <ServiceCategorySelectBut
+            content="Face"
+            BaseUrl="ServiceDetailsKids"
+          />
         </div>
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 ">
