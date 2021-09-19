@@ -1,8 +1,12 @@
 import { combineReducers } from "redux";
 import auth from "./auth";
-import service from "./service";
+import womenService from "./womenService";
+import menService from "./menService";
+import kidService from "./kidService";
 
 export default combineReducers({
   auth,
-  service,
+  womenService,
+  menService,
+  kidService,
 });

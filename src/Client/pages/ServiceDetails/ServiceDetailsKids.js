@@ -5,14 +5,16 @@ import Footer from "../HomePage/Footer";
 import { Scrollbars } from "react-custom-scrollbars";
 import ServiceCategorySelectBut from "../../components/buttons/ServiceCategorySelectBut";
 import ServiceImage from "../../images/services/salon working-01.png";
-import { getAllServices } from "../../../actions/service";
 import ServiceCardTopic from "../../components/Card/ServiceCardTopic";
+import { getAllKidServices } from "../../../actions/kidServices";
 
 export default function ServiceDetailsKids() {
   const dispatch = useDispatch();
   // const [ispoup, setIspopup] = useState(false);
+  const { kidServices, kidLoading } = useSelector((state) => state.kidService);
+
   useEffect(() => {
-    dispatch(getAllServices());
+    dispatch(getAllKidServices());
   }, []);
 
   return (
@@ -36,17 +38,19 @@ export default function ServiceDetailsKids() {
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 ">
           <Scrollbars style={{ height: 800 }}>
-            <ServiceCard />
-            <ServiceCard />
             <ServiceCardTopic Topic="Face" />
-            <ServiceCard />
-            <ServiceCard />
+            {!kidLoading ? (
+              kidServices.map((kid) => <ServiceCard key={kid._id} kid={kid} />)
+            ) : (
+              <div>Loading</div>
+            )}
+
             <ServiceCardTopic Topic="Hair" />
+            {/* <ServiceCard />
             <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
+            <ServiceCard /> */}
             <ServiceCardTopic Topic="Skin" />
-            <ServiceCard />
+            {/* <ServiceCard /> */}
           </Scrollbars>{" "}
         </div>
 

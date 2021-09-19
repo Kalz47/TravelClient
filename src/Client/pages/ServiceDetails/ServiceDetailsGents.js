@@ -5,14 +5,19 @@ import Footer from "../HomePage/Footer";
 import { Scrollbars } from "react-custom-scrollbars";
 import ServiceCategorySelectBut from "../../components/buttons/ServiceCategorySelectBut";
 import ServiceImage from "../../images/services/salon working-01.png";
-import { getAllServices } from "../../../actions/service";
 import ServiceCardTopic from "../../components/Card/ServiceCardTopic";
+import { getAllMenServices } from "../../../actions/menServices";
 
 export default function ServiceDetailsGents() {
   const dispatch = useDispatch();
   // const [ispoup, setIspopup] = useState(false);
+
+  const { womenServices, womenLoading } = useSelector(
+    (state) => state.menService
+  );
+
   useEffect(() => {
-    dispatch(getAllServices());
+    dispatch(getAllMenServices());
   }, []);
 
   return (

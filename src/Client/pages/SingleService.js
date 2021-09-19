@@ -4,7 +4,7 @@ import ProductLogo from "../images/services/SingleService/productLogos/wella.png
 import ProductLogo1 from "../images/services/SingleService/productLogos/dreamron.jpg";
 import ProductLogo2 from "../images/services/SingleService/productLogos/4ever.jpg";
 
-export default function SingleService({ close }) {
+export default function SingleService({ close, kid }) {
   return (
     <div className="lg:w-4/5 mx-auto flex flex-wrap bg-white rounded overflow-hidden shadow-lg pin-r pin-y relative ">
       <button
@@ -34,7 +34,7 @@ export default function SingleService({ close }) {
       />
       <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
         <h2 className="text-sm title-font text-gray-500 tracking-widest">
-          AddTitle Here{" "}
+          {kid.name} {kid._id}
         </h2>
         <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
           Add Title Here{" "}

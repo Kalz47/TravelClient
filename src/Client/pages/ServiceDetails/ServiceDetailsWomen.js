@@ -5,15 +5,20 @@ import Footer from "../HomePage/Footer";
 import { Scrollbars } from "react-custom-scrollbars";
 import ServiceCategorySelectBut from "../../components/buttons/ServiceCategorySelectBut";
 import ServiceImage from "../../images/services/salon working-01.png";
-import { getAllServices } from "../../../actions/service";
 import ServiceCardTopic from "../../components/Card/ServiceCardTopic";
+import { getAllWomenServices } from "../../../actions/womenServices";
 
 export default function ServiceDetailsWomen() {
   const dispatch = useDispatch();
-  // const [ispoup, setIspopup] = useState(false);
+  const { womenServices, womenLoading } = useSelector(
+    (state) => state.womenService
+  );
+
   useEffect(() => {
-    dispatch(getAllServices());
+    dispatch(getAllWomenServices());
   }, []);
+
+  console.log(womenLoading);
 
   return (
     <>
@@ -36,17 +41,16 @@ export default function ServiceDetailsWomen() {
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 ">
           <Scrollbars style={{ height: 800 }}>
-            <ServiceCard />
-            <ServiceCard />
             <ServiceCardTopic Topic="Face" />
-            <ServiceCard />
-            <ServiceCard />
             <ServiceCardTopic Topic="Hair" />
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
+            {!womenLoading ? (
+              womenServices.map((service) => <ServiceCard />)
+            ) : (
+              <div>Loading</div>
+            )}
+
             <ServiceCardTopic Topic="Skin" />
-            <ServiceCard />
+            {/* <ServiceCard /> */}
           </Scrollbars>{" "}
         </div>
 
