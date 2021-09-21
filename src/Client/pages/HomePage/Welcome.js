@@ -6,7 +6,7 @@ import image1 from "../../images/services/SingleService/productLogos/4ever.jpg";
 import image2 from "../../images/services/SingleService/productLogos/dreamron.jpg";
 import LocationDropDownButton from "../../components/buttons/LocationDropDownButton";
 
-export default function Welcome() {
+export default function Welcome({ Location, setlocation }) {
   return (
     <div className="md:flex md:h-screen space-x-16 md:mr-0 mr-10 w-full h-60">
       <div className="md:flex items-center md:pl-16 pl-4">
@@ -25,7 +25,10 @@ export default function Welcome() {
           <div className="container flex mx-auto mt-4">
             <div className="flex ">
               <div className="w-full bg-transparent relative inline-flex">
-                <LocationDropDownButton />
+                <LocationDropDownButton
+                  Location={Location}
+                  setlocation={setlocation}
+                />
               </div>
             </div>
           </div>{" "}

@@ -44,7 +44,7 @@ export default function ServiceDetailsWomen() {
             <ServiceCardTopic Topic="Face" />
             <ServiceCardTopic Topic="Hair" />
             {!womenLoading ? (
-              womenServices.map((service) => <div>hi</div>)
+              womenServices.map((service) => <ServiceCard />)
             ) : (
               <div>Loading</div>
             )}

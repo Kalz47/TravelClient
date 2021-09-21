@@ -8,7 +8,7 @@ import ServiceImage from "../../images/services/salon working-01.png";
 import ServiceCardTopic from "../../components/Card/ServiceCardTopic";
 import { getAllKidServices } from "../../../actions/kidServices";
 
-export default function ServiceDetailsKids() {
+export default function ServiceDetailsKids({ Location }) {
   const dispatch = useDispatch();
   // const [ispoup, setIspopup] = useState(false);
   const { kidServices, kidLoading } = useSelector((state) => state.kidService);
@@ -40,11 +40,23 @@ export default function ServiceDetailsKids() {
           <Scrollbars style={{ height: 800 }}>
             <ServiceCardTopic Topic="Face" />
             {!kidLoading ? (
-              kidServices.map(
-                (kid) =>
-                  kid.category === "Face" && (
-                    <ServiceCard key={kid._id} kid={kid} />
-                  )
+              Location !== "" ? (
+                kidServices.map(
+                  (kid) =>
+                    kid.category === "Face" &&
+                    Location === kid.Location && (
+                      <ServiceCard key={kid._id} kid={kid} />
+                    )
+                )
+              ) : !kidLoading ? (
+                kidServices.map(
+                  (kid) =>
+                    kid.category === "Hair" && (
+                      <ServiceCard key={kid._id} kid={kid} />
+                    )
+                )
+              ) : (
+                <div>Loading</div>
               )
             ) : (
               <div>Loading</div>

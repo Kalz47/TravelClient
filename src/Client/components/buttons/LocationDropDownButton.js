@@ -1,13 +1,4 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/solid";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function LocationDropDownButton() {
+export default function LocationDropDownButton({ Location, setlocation }) {
   return (
     <div class="relative inline-flex">
       <svg
@@ -21,16 +12,18 @@ export default function LocationDropDownButton() {
           fill-rule="nonzero"
         />
       </svg>
-      <select class="border border-sitetheme-blue rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-        <option>Location</option>
-        <option>Red</option>
-        <option>Blue</option>
-        <option>Yellow</option>
-        <option>Black</option>
-        <option>Orange</option>
-        <option>Purple</option>
-        <option>Gray</option>
-        <option>White</option>
+      <select
+        onChange={(e) => setlocation(e.target.value)}
+        class="border border-sitetheme-blue rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+      >
+        <option>Colombo</option>
+        <option>Rajagiriya</option>
+        <option>Kollupitiya</option>
+        <option>Malabe</option>
+        <option>Nugegoda</option>
+        <option>Walikada</option>
+        <option>Rathmalana</option>
+        <option>Nittambuwa</option>
       </select>
     </div>
   );
