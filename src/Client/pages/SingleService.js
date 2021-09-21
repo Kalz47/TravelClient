@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import ProductLogo from "../images/services/SingleService/productLogos/wella.png";
 import ProductLogo1 from "../images/services/SingleService/productLogos/dreamron.jpg";
 import ProductLogo2 from "../images/services/SingleService/productLogos/4ever.jpg";
 
-export default function SingleService({ close, kid }) {
+export default function SingleService({ close, service }) {
+  const [image, setImage] = useState();
+  // const handleImage = async () => {
+  //   const res = await axios.get(
+  //     `http://localhost:8000/api/servicesImage/${service._id}`
+  //   );
+  //   console.log("IMage ==> ", res);
+  // };
+
+  useEffect(() => {
+    setImage(`http://localhost:8000/api/servicesImage/${service._id}`);
+  }, []);
   return (
     <div className="lg:w-4/5 mx-auto flex flex-wrap bg-white rounded overflow-hidden shadow-lg pin-r pin-y relative ">
       <button
@@ -30,11 +41,11 @@ export default function SingleService({ close, kid }) {
       <img
         alt="ecommerce"
         className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-        src="https://dummyimage.com/400x400"
+        src={image}
       />
       <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
         <h2 className="text-sm title-font text-gray-500 tracking-widest">
-          {kid.name} {kid._id}
+          {service.name} {service._id}
         </h2>
         <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
           Add Title Here{" "}
@@ -192,7 +203,7 @@ export default function SingleService({ close, kid }) {
             <ReactPlayer
               width="90%"
               height="90%"
-              url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+              url="https://www.youtube.com/watch?v=dOpW7ewpJwI&list=RDdOpW7ewpJwI&start_radio=1"
             />
           </div>
         </div>
