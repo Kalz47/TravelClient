@@ -8,7 +8,7 @@ import ServiceImage from "../../images/services/salon working-01.png";
 import ServiceCardTopic from "../../components/Card/ServiceCardTopic";
 import { getAllServices } from "../../../actions/services";
 
-export default function ServiceDetailsKids({ Location }) {
+export default function ServiceDetailsKids() {
   const dispatch = useDispatch();
   // const [ispoup, setIspopup] = useState(false);
   const { Services, loading } = useSelector((state) => state.services);
@@ -38,7 +38,7 @@ export default function ServiceDetailsKids({ Location }) {
         <div className="border-r border-gray-200 ">
           <Scrollbars style={{ height: 800 }}>
             <ServiceCardTopic Topic="Face" />
-            {!kidLoading ? (
+            {/* {!kidLoading ? (
               Location !== "" ? (
                 kidServices.map(
                   (kid) =>
@@ -56,6 +56,18 @@ export default function ServiceDetailsKids({ Location }) {
                 )
               ) : (
                 <div>Loading</div>
+              )
+            ) : (
+              <div>Loading...</div>
+            )} */}
+
+            {!loading ? (
+              Services.map(
+                (service) =>
+                  service.serviceType === "Kid" &&
+                  service.category === "Face" && (
+                    <ServiceCard service={service} />
+                  )
               )
             ) : (
               <div>Loading...</div>

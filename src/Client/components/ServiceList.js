@@ -1,7 +1,7 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
 
-export default function ServiceList({ index, Topic, BaseUrl }) {
+export default function ServiceList({ index, Topic, BaseUrl, Location }) {
   return (
     <div>
       <span className="block">

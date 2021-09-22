@@ -7,7 +7,7 @@ import OurTeam from "./HomePage/OurTeam";
 
 export default function Home() {
   const [Location, setlocation] = useState("");
-  console.log(Location);
+  // console.log(Location);
 
   return (
     <div>

@@ -1,15 +1,14 @@
 import React from "react";
 import Typed from "react-typed";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import image1 from "../../images/services/SingleService/productLogos/4ever.jpg";
 import image2 from "../../images/services/SingleService/productLogos/dreamron.jpg";
 import LocationDropDownButton from "../../components/buttons/LocationDropDownButton";
+import Slider from "../../components/slider/Slider";
 
 export default function Welcome({ Location, setlocation }) {
   return (
-    <div className="md:flex md:h-screen space-x-16 md:mr-0 mr-10 w-full h-60">
-      <div className="md:flex items-center md:pl-16 pl-4">
+    <div className="md:flex md:h-screen  md:mr-0 mr-10 w-full h-60">
+      <div className="md:flex items-center md:pl-16 pl-4 space-x-16">
         <div className="mt-12">
           <h1 className="lg:text-5xl text-sitetheme-blue  font-bold leading-tight text-3xl">
             eCrew Digital Lanka{" "}
@@ -35,25 +34,8 @@ export default function Welcome({ Location, setlocation }) {
         </div>
       </div>
       {/* <!-- Box right --> */}
-      <div className=" w-full h-12 flex justify-center ">
-        <div className="hidden sm:block">
-          <Carousel
-            showThumbs={false}
-            autoPlay={true}
-            infiniteLoop={true}
-            showIndicators={true}
-          >
-            <div>
-              <img src={image1} className="h-1/2" />
-            </div>
-            <div>
-              <img src={image2} className="h-1/2" />
-            </div>
-            <div>
-              <img src={image1} className="h-1/2" />
-            </div>
-          </Carousel>
-        </div>
+      <div className=" w-screen my-4">
+        <Slider />
       </div>
     </div>
   );
