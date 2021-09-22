@@ -1,17 +1,15 @@
 import React from "react";
-import ViewMoreButton from "../../components/ViewMoreButton";
-import background from "../../images/home/cover.jpg";
-import DropDownButoon from "../../components/buttons/DropDownButoon";
 import Typed from "react-typed";
+import image1 from "../../images/services/SingleService/productLogos/4ever.jpg";
+import image2 from "../../images/services/SingleService/productLogos/dreamron.jpg";
+import LocationDropDownButton from "../../components/buttons/LocationDropDownButton";
+import Slider from "../../components/slider/Slider";
 
-export default function Welcome() {
+export default function Welcome({ Location, setlocation }) {
   return (
-    <div
-      className="md:flex md:h-screen space-x-16 md:mr-0 mr-10 w-full "
-      style={{ backgroundImage: `url(${background})` }}
-    >
-      <div className="md:flex items-center pl-16 ">
-        <div className="">
+    <div className="md:flex md:h-screen  md:mr-0 mr-10 w-full h-60">
+      <div className="md:flex items-center md:pl-16 pl-4 space-x-16">
+        <div className="mt-12">
           <h1 className="lg:text-5xl text-sitetheme-blue  font-bold leading-tight text-3xl">
             eCrew Digital Lanka{" "}
           </h1>
@@ -24,15 +22,21 @@ export default function Welcome() {
             />
           </p>
           <div className="container flex mx-auto mt-4">
-            <div className="flex border-2 rounded-full">
+            <div className="flex ">
               <div className="w-full bg-transparent relative inline-flex">
-                <DropDownButoon color="white" />
+                <LocationDropDownButton
+                  Location={Location}
+                  setlocation={setlocation}
+                />
               </div>
             </div>
           </div>{" "}
         </div>
       </div>
       {/* <!-- Box right --> */}
+      <div className=" w-screen my-4">
+        <Slider />
+      </div>
     </div>
   );
 }

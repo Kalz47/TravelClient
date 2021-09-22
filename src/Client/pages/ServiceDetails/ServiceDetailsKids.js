@@ -38,6 +38,29 @@ export default function ServiceDetailsKids() {
         <div className="border-r border-gray-200 ">
           <Scrollbars style={{ height: 800 }}>
             <ServiceCardTopic Topic="Face" />
+            {/* {!kidLoading ? (
+              Location !== "" ? (
+                kidServices.map(
+                  (kid) =>
+                    kid.category === "Face" &&
+                    Location === kid.Location && (
+                      <ServiceCard key={kid._id} kid={kid} />
+                    )
+                )
+              ) : !kidLoading ? (
+                kidServices.map(
+                  (kid) =>
+                    kid.category === "Hair" && (
+                      <ServiceCard key={kid._id} kid={kid} />
+                    )
+                )
+              ) : (
+                <div>Loading</div>
+              )
+            ) : (
+              <div>Loading...</div>
+            )} */}
+
             {!loading ? (
               Services.map(
                 (service) =>
