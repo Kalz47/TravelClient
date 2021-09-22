@@ -6,19 +6,18 @@ import { Scrollbars } from "react-custom-scrollbars";
 import ServiceCategorySelectBut from "../../components/buttons/ServiceCategorySelectBut";
 import ServiceImage from "../../images/services/salon working-01.png";
 import ServiceCardTopic from "../../components/Card/ServiceCardTopic";
-import { getAllWomenServices } from "../../../actions/womenServices";
+import { getAllServices } from "../../../actions/services";
 
 export default function ServiceDetailsWomen() {
   const dispatch = useDispatch();
-  const { womenServices, womenLoading } = useSelector(
-    (state) => state.womenService
-  );
+  // const { womenServices, womenLoading } = useSelector(
+  //   (state) => state.womenService
+  // );
+  const { Services, loading } = useSelector((state) => state.services);
 
   useEffect(() => {
-    dispatch(getAllWomenServices());
+    dispatch(getAllServices());
   }, []);
-
-  console.log(womenLoading);
 
   return (
     <>
@@ -42,15 +41,42 @@ export default function ServiceDetailsWomen() {
         <div className="border-r border-gray-200 ">
           <Scrollbars style={{ height: 800 }}>
             <ServiceCardTopic Topic="Face" />
-            <ServiceCardTopic Topic="Hair" />
-            {!womenLoading ? (
-              womenServices.map((service) => <ServiceCard />)
+            {!loading ? (
+              Services.map(
+                (service) =>
+                  service.serviceType === "Women" &&
+                  service.category === "Face" && (
+                    <ServiceCard service={service} />
+                  )
+              )
             ) : (
-              <div>Loading</div>
+              <div>Loading...</div>
             )}
 
+            <ServiceCardTopic Topic="Hair" />
+            {!loading ? (
+              Services.map(
+                (service) =>
+                  service.serviceType === "Women" &&
+                  service.category === "Hair" && (
+                    <ServiceCard service={service} />
+                  )
+              )
+            ) : (
+              <div>Loading...</div>
+            )}
             <ServiceCardTopic Topic="Skin" />
-            {/* <ServiceCard /> */}
+            {!loading ? (
+              Services.map(
+                (service) =>
+                  service.serviceType === "Women" &&
+                  service.category === "Skin" && (
+                    <ServiceCard service={service} />
+                  )
+              )
+            ) : (
+              <div>Loading...</div>
+            )}
           </Scrollbars>{" "}
         </div>
 

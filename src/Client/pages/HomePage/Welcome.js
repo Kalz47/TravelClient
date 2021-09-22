@@ -12,7 +12,7 @@ export default function Welcome({ Location, setlocation }) {
       <div className="md:flex items-center md:pl-16 pl-4">
         <div className="mt-12">
           <h1 className="lg:text-5xl text-sitetheme-blue  font-bold leading-tight text-3xl">
-            ECrew Digital Lanka{" "}
+            eCrew Digital Lanka{" "}
           </h1>
           <p className="mt-4 text-lg font-normal text-sitetheme-blue">
             <Typed
