@@ -12,6 +12,8 @@ export default function ServiceDetailsKids() {
   const dispatch = useDispatch();
   // const [ispoup, setIspopup] = useState(false);
   const { Services, loading } = useSelector((state) => state.services);
+  const { location } = useSelector((state) => state.location);
+  console.log(location);
   useEffect(() => {
     dispatch(getAllServices());
   }, []);

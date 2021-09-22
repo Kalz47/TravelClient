@@ -16,4 +16,7 @@ export const GET_ALL_SERVICES_ERROR = "GET_ALL_SERVICES_ERROR";
 export const GET_SERVICE_SUCCESS = "GET_SERVICE_SUCCESS";
 export const GET_SERVICE_ERROR = "GET_SERVICE_ERROR";
 
-// grt delete
+// location
+
+export const SET_LOCATION = "SET_LOCATION";
+export const REMOVE_LOCATION = "REMOVE_LOCATION";

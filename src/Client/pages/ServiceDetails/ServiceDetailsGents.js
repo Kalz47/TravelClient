@@ -13,6 +13,8 @@ export default function ServiceDetailsGents() {
   // const [ispoup, setIspopup] = useState(false);
 
   const { Services, loading } = useSelector((state) => state.services);
+  const { location } = useSelector((state) => state.location);
+
   useEffect(() => {
     dispatch(getAllServices());
   }, []);
@@ -42,12 +44,23 @@ export default function ServiceDetailsGents() {
           <Scrollbars style={{ height: 800 }}>
             <ServiceCardTopic Topic="Face" />
             {!loading ? (
-              Services.map(
-                (service) =>
-                  service.serviceType === "Men" &&
-                  service.category === "Face" && (
-                    <ServiceCard service={service} />
-                  )
+              location !== null ? (
+                Services.map(
+                  (service) =>
+                    service.serviceType === "Men" &&
+                    service.category === "Face" &&
+                    service.location === location && (
+                      <ServiceCard service={service} />
+                    )
+                )
+              ) : (
+                Services.map(
+                  (service) =>
+                    service.serviceType === "Men" &&
+                    service.category === "Face" && (
+                      <ServiceCard service={service} />
+                    )
+                )
               )
             ) : (
               <div>Loading...</div>

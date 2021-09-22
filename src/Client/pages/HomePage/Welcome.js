@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typed from "react-typed";
 import image1 from "../../images/services/SingleService/productLogos/4ever.jpg";
 import image2 from "../../images/services/SingleService/productLogos/dreamron.jpg";
 import LocationDropDownButton from "../../components/buttons/LocationDropDownButton";
 import Slider from "../../components/slider/Slider";
+import { useDispatch } from "react-redux";
+import { SET_LOCATION, REMOVE_LOCATION } from "../../../actions/type";
 
 export default function Welcome({ Location, setlocation }) {
+  const dispatch = useDispatch();
+  console.log(Location);
+
+  useEffect(() => {
+    if (Location !== "") {
+      dispatch({
+        type: SET_LOCATION,
+        payload: Location,
+      });
+    }
+  }, [Location]);
+
   return (
     <div className="md:flex md:h-screen  md:mr-0 mr-10 w-full h-60">
       <div className="md:flex items-center md:pl-16 pl-4 space-x-16">

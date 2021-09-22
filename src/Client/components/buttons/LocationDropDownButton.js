@@ -23,7 +23,7 @@ export default function LocationDropDownButton({ Location, setlocation }) {
         <option>Nugegoda</option>
         <option>Walikada</option>
         <option>Rathmalana</option>
-        <option>Nittambuwa</option>
+        <option>Dehiwala</option>
       </select>
     </div>
   );
