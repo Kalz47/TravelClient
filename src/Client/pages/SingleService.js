@@ -188,7 +188,7 @@ export default function SingleService({ close, service }) {
         </div>
         <div className="flex justify-around ">
           <div>
-            <span className="title-font font-medium text-2xl text-gray-900">
+            <span className="title-font font-medium text-2xl text-gray-900 item">
               $58.00
             </span>
           </div>
