@@ -5,6 +5,7 @@ import ProductLogo1 from "../images/services/SingleService/productLogos/dreamron
 import ProductLogo2 from "../images/services/SingleService/productLogos/4ever.jpg";
 
 export default function SingleService({ close, service }) {
+  console.log(service);
   const [image, setImage] = useState();
   // const handleImage = async () => {
   //   const res = await axios.get(
@@ -44,12 +45,13 @@ export default function SingleService({ close, service }) {
         src={image}
       />
       <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-        <h2 className="text-sm title-font text-gray-500 tracking-widest">
+        {/* <h2 className="text-sm title-font text-gray-500 tracking-widest">
           {service.name} {service._id}
-        </h2>
+        </h2> */}
         <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-          Add Title Here{" "}
+          {service.name}{" "}
         </h1>
+
         <div className="flex mb-4">
           <span className="flex items-center">
             <svg
@@ -109,6 +111,14 @@ export default function SingleService({ close, service }) {
             </svg>
             <span className="text-gray-600 ml-3">4 Reviews</span>
           </span>
+          <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s text-sitetheme-blue">
+            {" "}
+            Time : {service.time}
+          </span>
+          <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s text-sitetheme-blue">
+            {" "}
+            Location : {service.location}
+          </span>
           <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
             <a className="text-sitetheme-blue">
               <svg
@@ -148,13 +158,7 @@ export default function SingleService({ close, service }) {
             </a>
           </span>
         </div>
-        <p className="leading-relaxed">
-          Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-          sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps
-          cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine
-          tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean
-          shorts keytar banjo tattooed umami cardigan.
-        </p>
+        <p className="leading-relaxed w-screen">{service.features}</p>
         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
           <div className="flex">
             <img className=" ml-1  w-auto h-8" src={ProductLogo} />
@@ -189,7 +193,7 @@ export default function SingleService({ close, service }) {
         <div className="flex justify-around ">
           <div>
             <span className="title-font font-medium text-2xl text-gray-900 item">
-              $58.00
+              {service.price} LKR{" "}
             </span>
           </div>
           <div>
@@ -199,13 +203,13 @@ export default function SingleService({ close, service }) {
           </div>
         </div>
         <div className="w-full mt-20 mr-10 flex justify-center">
-          <div className="">
-            <ReactPlayer
-              width="90%"
-              height="90%"
-              url="https://www.youtube.com/watch?v=dOpW7ewpJwI&list=RDdOpW7ewpJwI&start_radio=1"
-            />
-          </div>
+          {service.video == "" ||
+          service.video == undefined ||
+          service.video == null ? null : (
+            <div className="">
+              <ReactPlayer width="90%" height="90%" url={service.video} />
+            </div>
+          )}
         </div>
       </div>
     </div>

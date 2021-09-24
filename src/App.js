@@ -16,7 +16,7 @@ import ServiceDetailsKids from "./Client/pages/ServiceDetails/ServiceDetailsKids
 import ServiceDetailsWomen from "./Client/pages/ServiceDetails/ServiceDetailsWomen";
 // admin routes
 import AdminLogin from "./Admin/pages/Login";
-import AdminDashboard from "./Admin/pages/Dashboard";
+import AdminDashboard from "./Admin/pages/AdminDashboard";
 import Appoinments from "./Admin/pages/subpages/Appoinments";
 import Calender from "./Admin/pages/subpages/Calender";
 import Cupons from "./Admin/pages/subpages/Cupons";
