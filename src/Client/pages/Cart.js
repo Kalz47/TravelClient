@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "./HomePage/Footer";
 import Popup from "reactjs-popup";
@@ -6,8 +6,14 @@ import Register from "./Register";
 import UserDetails from "../components/Card/UserDetails";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import { useSelector, useDispatch } from "react-redux";
+import { removeFromCart } from "../../actions/cart";
 
 export default function Cart({ close }) {
+  const dispatch = useDispatch();
+  const { cartItems } = useSelector((state) => state.cart);
+  const [cart, setCart] = useState([]);
+
   const [userValues, setUserValues] = useState({
     name: "",
     email: "",
@@ -27,9 +33,16 @@ export default function Cart({ close }) {
   };
   const { long, lat } = location;
 
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
+  const getSubTotal = () => {
+    return cartItems.reduce((price, item) => item.price + price, 0);
+  };
+
   return (
     <div className="md:relative lg:relative ">
-      {" "}
       <div
         className=" relative text-center w-full object-cover h-80 block mx-auto  sm:block sm:w-full"
         style={{
@@ -52,142 +65,59 @@ export default function Cart({ close }) {
               <thead>
                 <tr className="h-12 uppercase">
                   <th className="hidden md:table-cell"></th>
-                  <th className="text-left">Product</th>
-                  <th className="lg:text-right text-left pl-5 lg:pl-0">
-                    <span className="lg:hidden" title="Quantity">
-                      Qtd
-                    </span>
-                    <span className="hidden lg:inline">Quantity</span>
-                  </th>
-                  <th className="hidden text-right md:table-cell">
-                    Unit price
-                  </th>
-                  <th className="text-right">Total price</th>
+                  <th className="text-left">Package Name</th>
+                  <th className="text-right">Time</th>
+                  <th className="text-right">Location</th>
+                  <th className="text-right">Price</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="hidden pb-4 md:table-cell">
-                    <a href="#">
-                      <img
-                        src="https://limg.app/i/Calm-Cormorant-Catholic-Pinball-Blaster-yM4oub.jpeg"
-                        className="w-20 rounded"
-                        alt="Thumbnail"
-                      />
-                    </a>
-                  </td>
-                  <td>
-                    <a href="#">
-                      <p className="mb-2 md:ml-4">Earphone</p>
-                      <form action="" method="POST">
-                        <button type="submit" className="text-gray-700 md:ml-4">
-                          <small>(Remove item)</small>
-                        </button>
-                      </form>
-                    </a>
-                  </td>
-                  <td className="justify-center md:justify-end md:flex mt-6">
-                    <div className="w-20 h-10">
-                      <div className="relative flex flex-row w-full h-8">
-                        <input
-                          type="number"
-                          value="2"
-                          className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"
-                        />
-                      </div>
-                    </div>
-                  </td>
-                  <td className="hidden text-right md:table-cell">
-                    <span className="text-sm lg:text-base font-medium">
-                      10.00€
-                    </span>
-                  </td>
-                  <td className="text-right">
-                    <span className="text-sm lg:text-base font-medium">
-                      20.00€
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="hidden pb-4 md:table-cell">
-                    <a href="#">
-                      <img
-                        src="https://limg.app/i/Cute-Constrictor-Super-Sexy-Military-Enforcer-W7mvBp.png"
-                        className="w-20 rounded"
-                        alt="Thumbnail"
-                      />
-                    </a>
-                  </td>
-                  <td>
-                    <p className="mb-2 md:ml-4">Tesla Model 3</p>
-                    <form action="" method="POST">
-                      <button type="submit" className="text-gray-700 md:ml-4">
-                        <small>(Remove item)</small>
-                      </button>
-                    </form>
-                  </td>
-                  <td className="justify-center md:justify-end md:flex md:mt-4">
-                    <div className="w-20 h-10">
-                      <div className="relative flex flex-row w-full h-8">
-                        <input
-                          type="number"
-                          value="3"
-                          className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"
-                        />
-                      </div>
-                    </div>
-                  </td>
-                  <td className="hidden text-right md:table-cell">
-                    <span className="text-sm lg:text-base font-medium">
-                      49,600.01€
-                    </span>
-                  </td>
-                  <td className="text-right">
-                    <span className="text-sm lg:text-base font-medium">
-                      148,800.03€
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="hidden pb-4 md:table-cell">
-                    <a href="#">
-                      <img
-                        src="https://limg.app/i/Successful-Spider-Biblical-Mutant---Total-War-lKoE7D.jpeg"
-                        className="w-20 rounded"
-                        alt="Thumbnail"
-                      />
-                    </a>
-                  </td>
-                  <td>
-                    <p className="mb-2 md:ml-4">Bic 4 colour pen</p>
-                    <form action="" method="POST">
-                      <button type="submit" className="text-gray-700 md:ml-4">
-                        <small>(Remove item)</small>
-                      </button>
-                    </form>
-                  </td>
-                  <td className="justify-center md:justify-end md:flex md:mt-8">
-                    <div className="w-20 h-10">
-                      <div className="relative flex flex-row w-full h-8">
-                        <input
-                          type="number"
-                          value="5"
-                          className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"
-                        />
-                      </div>
-                    </div>
-                  </td>
-                  <td className="hidden text-right md:table-cell">
-                    <span className="text-sm lg:text-base font-medium">
-                      1.50€
-                    </span>
-                  </td>
-                  <td className="text-right">
-                    <span className="text-sm lg:text-base font-medium">
-                      7.50€
-                    </span>
-                  </td>
-                </tr>
+                {cartItems.length <= 0 || cartItems == null ? (
+                  <tr>
+                    <td>No services added</td>
+                  </tr>
+                ) : (
+                  cartItems.map((c) => (
+                    <tr>
+                      <td className="hidden pb-4 md:table-cell">
+                        <a href="#">
+                          <img
+                            src={`http://localhost:8000/api/servicesImage/${c.product}`}
+                            className="w-20 rounded"
+                            alt="Thumbnail"
+                          />
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#">
+                          <p className="mb-2 md:ml-4">{c.name}</p>
+                          <button
+                            type="submit"
+                            className="text-gray-700 md:ml-4"
+                            onClick={() => removeFromCartHandler(c.product)}
+                          >
+                            <small>(Remove item)</small>
+                          </button>
+                        </a>
+                      </td>
+                      <td className="hidden text-right md:table-cell">
+                        <span className="text-sm lg:text-base font-medium">
+                          {c.time}
+                        </span>
+                      </td>
+                      <td className="hidden text-right md:table-cell">
+                        <span className="text-sm lg:text-base font-medium">
+                          {c.location}
+                        </span>
+                      </td>
+                      <td className="hidden text-right md:table-cell">
+                        <span className="text-sm lg:text-base font-medium">
+                          {c.price}
+                        </span>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
             {/* <hr className="pb-6 mt-6"> */}
@@ -283,7 +213,7 @@ export default function Cart({ close }) {
                       Subtotal
                     </div>
                     <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                      148,827.53€
+                      Rs.{getSubTotal().toFixed(2)}
                     </div>
                   </div>
                   <div className="flex justify-between pt-4 border-b">

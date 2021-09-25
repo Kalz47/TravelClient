@@ -1,11 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
+import { addToCart } from "../../../actions/cart";
 import SingleService from "../../pages/SingleService";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import "./style.css";
 import placeholderimage from "../../images/logo.png";
 
 export default function ServiceCard({ service }) {
+  const history = useHistory();
+  const dispatch = useDispatch();
   const [image, setImage] = useState();
   // const handleImage = async () => {
   //   const res = await axios.get(
@@ -17,6 +22,11 @@ export default function ServiceCard({ service }) {
   useEffect(() => {
     setImage(`http://localhost:8000/api/servicesImage/${service._id}`);
   }, []);
+
+  const addToCartHandler = () => {
+    dispatch(addToCart(service._id));
+    history.push("/cart");
+  };
 
   return (
     <>
@@ -122,7 +132,10 @@ export default function ServiceCard({ service }) {
                       )}
                     </Popup>
 
-                    <button className="mt-2 transition ease-in duration-300 inline-flex items-center text-sm font-medium md:mb-0 bg-sitetheme-blue px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:text-sitetheme-blue hover:bg-white border hover:border-sitetheme-blue">
+                    <button
+                      onClick={addToCartHandler}
+                      className="mt-2 transition ease-in duration-300 inline-flex items-center text-sm font-medium md:mb-0 bg-sitetheme-blue px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:text-sitetheme-blue hover:bg-white border hover:border-sitetheme-blue"
+                    >
                       <span>Add Cart</span>
                     </button>
                   </div>

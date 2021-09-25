@@ -3,9 +3,13 @@ import ReactPlayer from "react-player";
 import ProductLogo from "../images/services/SingleService/productLogos/wella.png";
 import ProductLogo1 from "../images/services/SingleService/productLogos/dreamron.jpg";
 import ProductLogo2 from "../images/services/SingleService/productLogos/4ever.jpg";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../actions/cart";
+import { useHistory } from "react-router";
 
 export default function SingleService({ close, service }) {
-  console.log(service);
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [image, setImage] = useState();
   // const handleImage = async () => {
   //   const res = await axios.get(
@@ -17,6 +21,11 @@ export default function SingleService({ close, service }) {
   useEffect(() => {
     setImage(`http://localhost:8000/api/servicesImage/${service._id}`);
   }, []);
+
+  const addToCartHandler = () => {
+    dispatch(addToCart(service._id));
+    history.push("/cart");
+  };
   return (
     <div className="lg:w-4/5 mx-auto flex flex-wrap bg-white rounded overflow-hidden shadow-lg pin-r pin-y relative ">
       <button
@@ -197,7 +206,10 @@ export default function SingleService({ close, service }) {
             </span>
           </div>
           <div>
-            <button className="flex w-40 justify-center py-3 px-6  rounded-full bg-sitetheme-blue text-white  hover:bg-white hover:text-sitetheme-blue border hover:border-sitetheme-blue">
+            <button
+              onClick={addToCartHandler}
+              className="flex w-40 justify-center py-3 px-6  rounded-full bg-sitetheme-blue text-white  hover:bg-white hover:text-sitetheme-blue border hover:border-sitetheme-blue"
+            >
               Add
             </button>
           </div>

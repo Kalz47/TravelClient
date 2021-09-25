@@ -20,3 +20,8 @@ export const GET_SERVICE_ERROR = "GET_SERVICE_ERROR";
 
 export const SET_LOCATION = "SET_LOCATION";
 export const REMOVE_LOCATION = "REMOVE_LOCATION";
+
+//Cart
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const RESET_CART = "RESET_CART";
