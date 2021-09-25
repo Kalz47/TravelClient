@@ -5,10 +5,13 @@ import image2 from "../../images/services/SingleService/productLogos/dreamron.jp
 import LocationDropDownButton from "../../components/buttons/LocationDropDownButton";
 import { useDispatch } from "react-redux";
 import { SET_LOCATION, REMOVE_LOCATION } from "../../../actions/type";
-import Slider from "react-slick";
+import WelcomePageCarosel from "../../components/WelcomePageCarosel/WelcomePageCarosel";
+import "../../components/WelcomePageCarosel/WelcomePageCarosel";
+
+// import Slider from "react-slick";
 // Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 export default function Welcome({ Location, setlocation }) {
   const dispatch = useDispatch();
@@ -51,30 +54,8 @@ export default function Welcome({ Location, setlocation }) {
         </div>
       </div>
       {/* <!-- Box right --> */}
-      <div className=" md:w-full w-80 my-4 h-screen">
-        {" "}
-        <Slider
-          dots={true}
-          infinite={true}
-          speed={500}
-          slidesToShow={1}
-          slidesToScroll={1}
-          centerMode={true}
-          // centerPadding={100}
-        >
-          <div>
-            <img className="w-96" src={image1} />
-          </div>
-          <div>
-            <img src={image1} />
-          </div>
-          <div>
-            <img src={image1} />
-          </div>
-          <div>
-            <img src={image1} />
-          </div>
-        </Slider>
+      <div className="w-full md:mt-36  my-4 h-screen">
+        <WelcomePageCarosel />{" "}
       </div>
     </div>
   );
