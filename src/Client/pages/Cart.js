@@ -8,11 +8,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../../actions/cart";
+import { getCouponByName } from "../../actions/coupon";
 
 export default function Cart({ close }) {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
-  const [cart, setCart] = useState([]);
+  const { coupon, validate, couponLoading, error, number } = useSelector(
+    (state) => state.coupon
+  );
+  const [couponName, setCouponName] = useState("");
+  const [price, setPrice] = useState(0);
+  const [dis, setDis] = useState(0);
 
   const [userValues, setUserValues] = useState({
     name: "",
@@ -38,8 +44,45 @@ export default function Cart({ close }) {
   };
 
   const getSubTotal = () => {
+    // const price = cartItems.reduce((price, item) => item.price + price, 0);
     return cartItems.reduce((price, item) => item.price + price, 0);
   };
+
+  // const getAfterCoupon = () => {
+  //   return cartItems.reduce(
+  //     (price, item) =>
+  //       item.price + price - (item.price + price) * (coupon * 0.01),
+  //     0
+  //   );
+  // };
+
+  useEffect(() => {
+    if (cartItems.length > 0 && coupon) {
+      let value = cartItems.reduce((price, item) => item.price + price, 0);
+      let dis = value - value * coupon.discount * 0.01;
+      setPrice(dis);
+      setDis(value * coupon.discount * 0.01);
+      console.log("Price", dis);
+    }
+  }, [cartItems, couponName, coupon]);
+
+  // useEffect(() => {
+  //   if (coupon) {
+  //     let value = price * coupon * 0.01;
+  //     console.log("Discount", value);
+  //     setPrice(value);
+  //   }
+  // }, [coupon, cartItems]);
+
+  const handleCoupon = (e) => {
+    e.preventDefault();
+    dispatch(getCouponByName(couponName));
+  };
+
+  useEffect(() => {
+    console.log("====================================");
+    if (!validate) setDis(0);
+  }, [number]);
 
   return (
     <div className="md:relative lg:relative ">
@@ -131,37 +174,48 @@ export default function Cart({ close }) {
                     If you have a coupon code, please enter it in the box below
                   </p>
                   <div className="justify-center md:flex">
-                    <form action="" method="POST">
-                      <div className="flex items-center w-full h-13 pl-3 bg-blue-50 rounded-full">
-                        <input
-                          type="coupon"
-                          name="code"
-                          id="coupon"
-                          placeholder="Apply coupon"
-                          value="90off"
-                          className="w-full outline-none appearance-none focus:outline-none active:outline-none bg-blue-50"
-                        />
-                        <button
-                          type="submit"
-                          className="  text-sm flex items-center px-3 py-1 text-white bg-sitetheme-blue rounded-full outline-none md:px-4 hover:bg-white hover:text-sitetheme-blue border border-sitetheme-blue focus:outline-none active:outline-none"
+                    <div className="flex items-center w-full h-13 pl-3 bg-blue-50 rounded-full">
+                      <input
+                        type="coupon"
+                        name="couponName"
+                        id="coupon"
+                        placeholder="Apply coupon"
+                        value={couponName}
+                        onChange={(e) => setCouponName(e.target.value)}
+                        className="w-full outline-none appearance-none focus:outline-none active:outline-none bg-blue-50"
+                      />
+                      <button
+                        // onSubmit={(e) => {
+                        //   // e.preventDefault();
+                        //   handleCoupon(coupon);
+                        // }}
+                        onClick={handleCoupon}
+                      >
+                        Submit
+                      </button>
+                      {/* <button
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          handleCoupon(coupon);
+                        }}
+                        className="  text-sm flex items-center px-3 py-1 text-white bg-sitetheme-blue rounded-full outline-none md:px-4 hover:bg-white hover:text-sitetheme-blue border border-sitetheme-blue focus:outline-none active:outline-none"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          data-prefix="fas"
+                          data-icon="gift"
+                          className="w-8"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
                         >
-                          <svg
-                            aria-hidden="true"
-                            data-prefix="fas"
-                            data-icon="gift"
-                            className="w-8"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                          >
-                            <path
-                              fill="currentColor"
-                              d="M32 448c0 17.7 14.3 32 32 32h160V320H32v128zm256 32h160c17.7 0 32-14.3 32-32V320H288v160zm192-320h-42.1c6.2-12.1 10.1-25.5 10.1-40 0-48.5-39.5-88-88-88-41.6 0-68.5 21.3-103 68.3-34.5-47-61.4-68.3-103-68.3-48.5 0-88 39.5-88 88 0 14.5 3.8 27.9 10.1 40H32c-17.7 0-32 14.3-32 32v80c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16v-80c0-17.7-14.3-32-32-32zm-326.1 0c-22.1 0-40-17.9-40-40s17.9-40 40-40c19.9 0 34.6 3.3 86.1 80h-86.1zm206.1 0h-86.1c51.4-76.5 65.7-80 86.1-80 22.1 0 40 17.9 40 40s-17.9 40-40 40z"
-                            />
-                          </svg>
-                          <span className="font-medium">Apply coupon</span>
-                        </button>
-                      </div>
-                    </form>
+                          <path
+                            fill="currentColor"
+                            d="M32 448c0 17.7 14.3 32 32 32h160V320H32v128zm256 32h160c17.7 0 32-14.3 32-32V320H288v160zm192-320h-42.1c6.2-12.1 10.1-25.5 10.1-40 0-48.5-39.5-88-88-88-41.6 0-68.5 21.3-103 68.3-34.5-47-61.4-68.3-103-68.3-48.5 0-88 39.5-88 88 0 14.5 3.8 27.9 10.1 40H32c-17.7 0-32 14.3-32 32v80c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16v-80c0-17.7-14.3-32-32-32zm-326.1 0c-22.1 0-40-17.9-40-40s17.9-40 40-40c19.9 0 34.6 3.3 86.1 80h-86.1zm206.1 0h-86.1c51.4-76.5 65.7-80 86.1-80 22.1 0 40 17.9 40 40s-17.9 40-40 40z"
+                          />
+                        </svg>
+                        <span className="font-medium">Apply coupon</span>
+                      </button> */}
+                    </div>
                   </div>
                 </div>
                 <div className="p-4 mt-6">
@@ -243,10 +297,10 @@ export default function Cart({ close }) {
                   </div>
                   <div className="flex justify-between pt-4 border-b">
                     <div className="lg:px-4 lg:py-2 m-2 text-lg lg:text-xl font-bold text-center text-gray-800">
-                      New Subtotal
+                      Discount
                     </div>
                     <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                      14,882.75€
+                      Rs.{dis.toFixed(2)}
                     </div>
                   </div>
                   <div className="flex justify-between pt-4 border-b">
@@ -254,7 +308,7 @@ export default function Cart({ close }) {
                       Tax
                     </div>
                     <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                      2,976.55€
+                      Rs.0.00
                     </div>
                   </div>
                   <div className="flex justify-between pt-4 border-b">
@@ -262,7 +316,10 @@ export default function Cart({ close }) {
                       Total
                     </div>
                     <div className="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                      17,859.3€
+                      Rs.
+                      {coupon && coupon.discount != null
+                        ? price.toFixed(2)
+                        : getSubTotal().toFixed(2)}
                     </div>
                   </div>
 

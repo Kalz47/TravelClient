@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 import auth from "./auth";
 import services from "./services";
 import location from "./location";
+import coupon from "./coupon";
 import cart from "./cart";
 
 export default combineReducers({
@@ -9,4 +10,5 @@ export default combineReducers({
   services,
   location,
   cart,
+  coupon,
 });

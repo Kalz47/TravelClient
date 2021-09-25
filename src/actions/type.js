@@ -25,3 +25,6 @@ export const REMOVE_LOCATION = "REMOVE_LOCATION";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const RESET_CART = "RESET_CART";
+
+export const SUCCESS_COUPON = "SUCCESS_COUPON";
+export const FAILED_COUPON = "FAILED_COUPON";
