@@ -7,7 +7,7 @@ import UserDetails from "../components/Card/UserDetails";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart } from "../../actions/cart";
+import { addToDb, removeFromCart } from "../../actions/cart";
 import { getCouponByName } from "../../actions/coupon";
 
 export default function Cart({ close }) {
@@ -21,15 +21,18 @@ export default function Cart({ close }) {
   const [dis, setDis] = useState(0);
 
   const [userValues, setUserValues] = useState({
-    name: "",
-    email: "",
+    userName: "",
+    userEmail: "",
     address: "",
     city: "",
     province: "",
-    phone: "",
+    userPhone: "",
   });
 
-  const { name, email, address, city, province, phone } = userValues;
+  //
+
+  const { userName, userEmail, address, city, province, userProvince } =
+    userValues;
   const [location, setLocation] = useState({
     long: "",
     lat: "",
@@ -37,24 +40,22 @@ export default function Cart({ close }) {
   const handleChange = (e) => {
     setUserValues({ ...userValues, [e.target.name]: e.target.value });
   };
-  const { long, lat } = location;
+  // const { long, lat } = location;
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
 
   const getSubTotal = () => {
-    // const price = cartItems.reduce((price, item) => item.price + price, 0);
     return cartItems.reduce((price, item) => item.price + price, 0);
   };
 
-  // const getAfterCoupon = () => {
-  //   return cartItems.reduce(
-  //     (price, item) =>
-  //       item.price + price - (item.price + price) * (coupon * 0.01),
-  //     0
-  //   );
-  // };
+  useEffect(() => {
+    if (!validate && !coupon) {
+      const value = cartItems.reduce((price, item) => item.price + price, 0);
+      setPrice(value);
+    }
+  }, [validate, cartItems]);
 
   useEffect(() => {
     if (cartItems.length > 0 && coupon) {
@@ -80,9 +81,24 @@ export default function Cart({ close }) {
   };
 
   useEffect(() => {
-    console.log("====================================");
     if (!validate) setDis(0);
   }, [number]);
+
+  const handleProceed = (e) => {
+    e.preventDefault();
+    const data = { userValues, location, price, cartItems };
+    dispatch(addToDb(data));
+  };
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setLocation({
+        long: position.coords.longitude,
+        latitude: position.coords.latitude,
+      });
+    });
+    console.log("LOCATION", location);
+  }, []);
 
   return (
     <div className="md:relative lg:relative ">
@@ -354,6 +370,7 @@ export default function Cart({ close }) {
                         userValues={userValues}
                         handleChange={handleChange}
                         location={location}
+                        handleProceed={handleProceed}
                       />
                     )}
                   </Popup>

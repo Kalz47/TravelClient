@@ -1,17 +1,10 @@
 import React, { useEffect } from "react";
 import Typed from "react-typed";
-import image1 from "../../images/services/SingleService/productLogos/4ever.jpg";
-import image2 from "../../images/services/SingleService/productLogos/dreamron.jpg";
 import LocationDropDownButton from "../../components/buttons/LocationDropDownButton";
 import { useDispatch } from "react-redux";
 import { SET_LOCATION, REMOVE_LOCATION } from "../../../actions/type";
 import WelcomePageCarosel from "../../components/WelcomePageCarosel/WelcomePageCarosel";
 import "../../components/WelcomePageCarosel/WelcomePageCarosel";
-
-// import Slider from "react-slick";
-// Import css files
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 export default function Welcome({ Location, setlocation }) {
   const dispatch = useDispatch();

@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { login } from "../../actions/auth";
 import { connect, useDispatch } from "react-redux";

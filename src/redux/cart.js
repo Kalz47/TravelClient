@@ -1,7 +1,16 @@
-import { ADD_TO_CART, RESET_CART, REMOVE_FROM_CART } from "../actions/type";
+import {
+  ADD_TO_CART,
+  RESET_CART,
+  REMOVE_FROM_CART,
+  GET_ALL_CART_SUCCESS,
+  GET_ALL_CART_FAIL,
+} from "../actions/type";
 
 const initialState = {
   cartItems: [],
+  cart: [],
+  cartLoading: true,
+  error: null,
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -27,10 +36,21 @@ export default function (state = initialState, action) {
           cartItems: [...state.cartItems, item],
         };
       }
+
     case REMOVE_FROM_CART:
       return {
         ...state,
         cartItems: state.cartItems.filter((x) => x.product !== action.payload),
+      };
+    case GET_ALL_CART_SUCCESS:
+      return {
+        cart: payload,
+        cartLoading: false,
+      };
+    case GET_ALL_CART_FAIL:
+      return {
+        error: payload,
+        cartLoading: false,
       };
     default:
       return state;

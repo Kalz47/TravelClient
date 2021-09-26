@@ -28,3 +28,6 @@ export const RESET_CART = "RESET_CART";
 
 export const SUCCESS_COUPON = "SUCCESS_COUPON";
 export const FAILED_COUPON = "FAILED_COUPON";
+
+export const GET_ALL_CART_SUCCESS = "GET_ALL_CART_SUCCESS";
+export const GET_ALL_CART_FAIL = "GET_ALL_CART_FAIL";

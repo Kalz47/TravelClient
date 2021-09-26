@@ -1,4 +1,10 @@
-import { ADD_TO_CART, RESET_CART, REMOVE_FROM_CART } from "./type";
+import {
+  ADD_TO_CART,
+  RESET_CART,
+  REMOVE_FROM_CART,
+  GET_ALL_CART_SUCCESS,
+  GET_ALL_CART_FAIL,
+} from "./type";
 import axios from "axios";
 
 export const addToCart = (id) => async (dispatch, getState) => {
@@ -25,4 +31,31 @@ export const removeFromCart = (id) => (dispatch, getState) => {
   });
 
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
+};
+
+//Add to database
+
+export const addToDb = (data) => async (dispatch) => {
+  try {
+    const res = await axios.post("http://localhost:8000/api/cart", data);
+    console.log("Success");
+    console.log(res);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getCart = () => async (dispatch) => {
+  try {
+    const res = await axios.get("http://localhost:8000/api/cart");
+    dispatch({
+      type: GET_ALL_CART_SUCCESS,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: GET_ALL_CART_FAIL,
+      payload: error,
+    });
+  }
 };

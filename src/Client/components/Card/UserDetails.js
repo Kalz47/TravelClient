@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import LocationPicker from "react-location-picker";
 
-export default function UserDetails({ close, userValues, handleChange }) {
-  const { name, email, address, city, province, phone, location } = userValues;
+export default function UserDetails({
+  close,
+  userValues,
+  handleChange,
+  handleProceed,
+}) {
+  const { userName, userEmail, address, city, province, userPhone, location } =
+    userValues;
+
+  const [position, setPosition] = useState({
+    lat: "",
+    lng: "",
+  });
+  const [addresss, setAddresss] = useState("");
+
+  const defaultPosition = {
+    lat: 27.9878,
+    lng: 86.925,
+  };
+
   return (
     <div>
       {/* <!-- component --> */}
-      <div className="bg-grey-lighter min-h-screen flex flex-col">
+      <form
+        onSubmit={handleProceed}
+        className="bg-grey-lighter min-h-screen flex flex-col"
+      >
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 relative">
           <div className="bg-white px-6 py-8 shadow-md text-black w-full">
             <div className="flex justify-end -mt-6 -mr-4">
@@ -35,9 +57,9 @@ export default function UserDetails({ close, userValues, handleChange }) {
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="name"
+              name="userName"
               placeholder="Full Name"
-              value={name}
+              value={userName}
               onChange={handleChange}
             />
             <input
@@ -67,26 +89,35 @@ export default function UserDetails({ close, userValues, handleChange }) {
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="phone"
-              value={phone}
+              name="userPhone"
+              value={userPhone}
               onChange={handleChange}
               placeholder="Enter Phone Number"
             />
             <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              name="email"
-              value={email}
+              name="userEmail"
+              value={userEmail}
               onChange={handleChange}
               placeholder="Enter Email"
             />
-            <input
+            {/* <input
               type="text"
               className="mb-3 w-full bg-white rounded-full border border-gray-300 focus:border-sitetheme-blue focus:ring-2 focus:ring-sitetheme-lightblue text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               name="location"
               value={location}
               onChange={location}
               placeholder="Enter location"
+            /> */}
+            <LocationPicker
+              containerElement={<div style={{ height: "100%" }} />}
+              mapElement={<div style={{ height: "400px" }} />}
+              defaultPosition={defaultPosition}
+              onChange={({ position, address }) => {
+                setPosition(position);
+                setAddresss(address);
+              }}
             />
             <button
               type="submit"
@@ -124,7 +155,7 @@ export default function UserDetails({ close, userValues, handleChange }) {
             .
           </div> */}
         </div>
-      </div>
+      </form>
     </div>
   );
 }
