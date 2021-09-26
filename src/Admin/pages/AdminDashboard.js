@@ -30,7 +30,7 @@ export default function Dashboard() {
           dfdfhdfh
         </div>
       </div>
-      <div>
+      <div className="col-span-3">
         <BookingDetails />
       </div>
     </div>
