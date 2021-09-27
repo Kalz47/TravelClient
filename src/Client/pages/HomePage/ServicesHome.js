@@ -216,19 +216,19 @@ export default function ServicesHome({ Location }) {
             loop
           />
         </div>
-        <div className="py-4 px-10">
+        <div className="py-2 px-10 w-56">
           <Link to="/ServiceDetailsGents">
             {" "}
             <img src={ImgGents} />
           </Link>
         </div>
-        <div className="py-4">
+        <div className="py-2 px-10 w-64">
           {" "}
           <Link to="/ServiceDetailsWomen">
             <img src={Imgwomen} />{" "}
           </Link>
         </div>
-        <div className="py-4 px-10">
+        <div className="py-2 px-10 w-56">
           <Link to="/ServiceDetailsKids">
             <img src={ImgKids} />{" "}
           </Link>

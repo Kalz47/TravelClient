@@ -14,6 +14,7 @@ import ServiceDetails from "./Client/pages/ServiceDetails";
 import ServiceDetailsGents from "./Client/pages/ServiceDetails/ServiceDetailsGents";
 import ServiceDetailsKids from "./Client/pages/ServiceDetails/ServiceDetailsKids";
 import ServiceDetailsWomen from "./Client/pages/ServiceDetails/ServiceDetailsWomen";
+import cartAlert from "./Client/components/homePageSlider/components/Popup/cartAlert";
 // admin routes
 import AdminLogin from "./Admin/pages/Login";
 import AdminDashboard from "./Admin/pages/AdminDashboard";
@@ -32,6 +33,7 @@ import SideDrawer from "./Client/components/SideDrawer";
 import { useState } from "react";
 import NavBar from "./Client/components/NavBar";
 import Backdrop from "./Client/components/Backdrop";
+import test from "./Client/pages/test";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -41,9 +43,12 @@ function App() {
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <div>
+        {/* Testing routes */}
+        <Route path="/test" exact component={test}></Route>
         {/* client routes */}
         <Route path="/" exact component={Home}></Route>
         <Route path="/login" exact component={Login}></Route>
+        <Route path="/cartAlert" exact component={cartAlert}></Route>
         <Route path="/register" exact component={Register}></Route>
         <Route path="/aboutUs" exact component={AboutUs}></Route>
         <Route path="/contactUs" exact component={ContactUs}></Route>
