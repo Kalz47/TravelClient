@@ -47,6 +47,11 @@ export default function NavBar({ click }) {
           <img src={logo} className="w-10 h-10 shadow-md " />
         </Link>{" "}
         <div className="space-x-6  items-center sm:block hidden ">
+          <Link to="/cart">
+            {" "}
+            <i class="fas fa-shopping-cart pr-2"></i>
+            Cart
+          </Link>
           <Link to="/">
             {" "}
             <i class="fas fa-home pr-2 mt-1"></i>

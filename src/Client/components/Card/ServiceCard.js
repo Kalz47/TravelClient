@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import "./style.css";
 import placeholderimage from "../../images/logo.png";
+import cartAlert from "../homePageSlider/components/Popup/cartAlert";
 
 export default function ServiceCard({ service }) {
   const history = useHistory();
@@ -91,10 +92,6 @@ export default function ServiceCard({ service }) {
                     <div className="w-full flex-none text-sm flex items-center text-gray-600">
                       <ul class="list-disc">
                         <li>{service.features}</li>
-                        {/* <li>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit
-                        </li> */}
                       </ul>
                     </div>
                     <div className="flex-1 inline-flex items-center mb-3"></div>
@@ -132,12 +129,75 @@ export default function ServiceCard({ service }) {
                       )}
                     </Popup>
 
-                    <button
-                      onClick={addToCartHandler}
-                      className="mt-2 transition ease-in duration-300 inline-flex items-center text-sm font-medium md:mb-0 bg-sitetheme-blue px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:text-sitetheme-blue hover:bg-white border hover:border-sitetheme-blue"
+                    <Popup
+                      trigger={
+                        <div className="flex flex-between">
+                          <button className="mt-2 transition ease-in duration-300 inline-flex items-center text-sm font-medium md:mb-0 bg-sitetheme-blue px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:text-sitetheme-blue hover:bg-white border hover:border-sitetheme-blue">
+                            <span>Add Cart</span>
+                          </button>
+                        </div>
+                      }
+                      modal
+                      nested
                     >
-                      <span>Add Cart</span>
-                    </button>
+                      {(close) => (
+                        <div className="modal">
+                          <div className="w-full  max-w-lg p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
+                            <button
+                              className=" text-gray-300  absolute top-2 right-2"
+                              onClick={() => {
+                                close();
+                              }}
+                            >
+                              {" "}
+                              <svg
+                                class="w-6 h-6"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"
+                                ></path>
+                              </svg>
+                            </button>
+                            {/* <!--content--> */}
+                            <div className="">
+                              {/* <!--body--> */}
+                              <div className="text-center p-5 flex-auto justify-center">
+                                <span className="w-16 h-16 flex items-center text-sitetheme-blue mx-auto mb-8">
+                                  <i class="far fa-check-circle fa-5x"></i>
+                                </span>
+                                <p className="text-sm text-gray-500 px-8">
+                                  A new item has been added to your Shopping
+                                  Cart. You now have 1 items in your Shopping
+                                  Cart.
+                                </p>
+                              </div>
+                              {/* <!--footer--> */}
+                              <div className="p-3  mt-2 text-center space-x-4 md:block">
+                                <button
+                                  onClick={addToCartHandler}
+                                  className="mb-2 md:mb-0 bg-sitetheme-blue border border-thbg-sitetheme-blue px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-white hover:text-sitetheme-blue hover:border-sitetheme-blue"
+                                >
+                                  View Shopping Cart{" "}
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    close();
+                                  }}
+                                  className="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border border-sitetheme-blue text-sitetheme-blue rounded-full hover:shadow-lg hover:bg-sitetheme-blue hover:text-white"
+                                >
+                                  Contnue Shopping{" "}
+                                </button>
+                              </div>
+                            </div>
+                          </div>{" "}
+                        </div>
+                      )}
+                    </Popup>
                   </div>
                 </div>
               </div>
