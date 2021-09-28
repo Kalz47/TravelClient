@@ -59,3 +59,31 @@ export const getCart = () => async (dispatch) => {
     });
   }
 };
+
+export const cartInProgress = (id) => async (dispatch) => {
+  try {
+    const res = await axios.put(
+      `http://localhost:8000/api/cartInProcessing/${id}`
+    );
+    console.log(res);
+
+    // dispatch({
+    //   type: GET_ALL_CART_SUCCESS,
+    //   payload: res.data,
+    // });
+  } catch (error) {
+    console.log(error);
+    // dispatch({
+    //   type: GET_ALL_CART_FAIL,
+    //   payload: error,
+    // });
+  }
+};
+
+export const cartDone = (id) => async (dispatch) => {
+  try {
+    await axios.put(`http://localhost:8000/api//cartInDone/${id}`);
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -4,6 +4,8 @@ import {
   REMOVE_FROM_CART,
   GET_ALL_CART_SUCCESS,
   GET_ALL_CART_FAIL,
+  CART_UPDATE_SUCCESS,
+  CART_UPDATE_FAIL,
 } from "../actions/type";
 
 const initialState = {
@@ -11,6 +13,7 @@ const initialState = {
   cart: [],
   cartLoading: true,
   error: null,
+  updateItem: null,
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -48,11 +51,17 @@ export default function (state = initialState, action) {
         cartLoading: false,
         cartItems: [...state.cartItems],
       };
+    case CART_UPDATE_FAIL:
     case GET_ALL_CART_FAIL:
       return {
         error: payload,
         cartLoading: false,
         cartItems: [...state.cartItems],
+      };
+    case CART_UPDATE_SUCCESS:
+      return {
+        cartLoading: false,
+        updateItem: payload,
       };
     default:
       return state;
