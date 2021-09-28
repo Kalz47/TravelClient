@@ -112,7 +112,7 @@ export default function UserDetails({
             /> */}
             <LocationPicker
               containerElement={<div style={{ height: "100%" }} />}
-              mapElement={<div style={{ height: "400px" }} />}
+              mapElement={<div style={{ height: "200px" }} />}
               defaultPosition={defaultPosition}
               onChange={({ position, address }) => {
                 setPosition(position);

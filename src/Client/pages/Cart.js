@@ -88,6 +88,9 @@ export default function Cart({ close }) {
     e.preventDefault();
     const data = { userValues, location, price, cartItems };
     dispatch(addToDb(data));
+    setTimeout(() => {
+      window.location.reload(10);
+    }, 2000);
   };
 
   useEffect(() => {

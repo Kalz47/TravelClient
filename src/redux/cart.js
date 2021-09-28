@@ -46,11 +46,13 @@ export default function (state = initialState, action) {
       return {
         cart: payload,
         cartLoading: false,
+        cartItems: [...state.cartItems],
       };
     case GET_ALL_CART_FAIL:
       return {
         error: payload,
         cartLoading: false,
+        cartItems: [...state.cartItems],
       };
     default:
       return state;

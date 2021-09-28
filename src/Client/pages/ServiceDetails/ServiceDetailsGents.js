@@ -11,6 +11,7 @@ import { getAllServices } from "../../../actions/services";
 export default function ServiceDetailsGents() {
   const dispatch = useDispatch();
   // const [ispoup, setIspopup] = useState(false);
+  const [isBackdrop, setIsBackDrop] = useState(false);
 
   const { Services, loading } = useSelector((state) => state.services);
   const { location } = useSelector((state) => state.location);
@@ -51,7 +52,10 @@ export default function ServiceDetailsGents() {
                     service.serviceType === "Men" &&
                     service.category === "Face" &&
                     service.location === location && (
-                      <ServiceCard service={service} />
+                      <ServiceCard
+                        service={service}
+                        setIsBackDrop={setIsBackDrop}
+                      />
                     )
                 )
               ) : (
@@ -59,7 +63,10 @@ export default function ServiceDetailsGents() {
                   (service) =>
                     service.serviceType === "Men" &&
                     service.category === "Face" && (
-                      <ServiceCard service={service} />
+                      <ServiceCard
+                        service={service}
+                        setIsBackDrop={setIsBackDrop}
+                      />
                     )
                 )
               )
@@ -73,7 +80,10 @@ export default function ServiceDetailsGents() {
                 (service) =>
                   service.serviceType === "Men" &&
                   service.category === "Hair" && (
-                    <ServiceCard service={service} />
+                    <ServiceCard
+                      service={service}
+                      setIsBackDrop={setIsBackDrop}
+                    />
                   )
               )
             ) : (
@@ -85,7 +95,10 @@ export default function ServiceDetailsGents() {
                 (service) =>
                   service.serviceType === "Men" &&
                   service.category === "Skin" && (
-                    <ServiceCard service={service} />
+                    <ServiceCard
+                      service={service}
+                      setIsBackDrop={setIsBackDrop}
+                    />
                   )
               )
             ) : (
@@ -100,7 +113,9 @@ export default function ServiceDetailsGents() {
         </div>
       </div>
       <Footer />
-      {/* <div className="backdrop"></div> */}
+      {isBackdrop && (
+        <div onClick={() => setIsBackDrop(false)} className="backdrop"></div>
+      )}
     </>
   );
 }

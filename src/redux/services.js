@@ -3,6 +3,8 @@ import {
   GET_SERVICE_SUCCESS,
   GET_ALL_SERVICES_ERROR,
   GET_SERVICE_ERROR,
+  GET_SUG_SERVICES_SUCCESS,
+  GET_SUG_SERVICES_ERROR,
 } from "../actions/type";
 
 const initialState = {
@@ -10,6 +12,7 @@ const initialState = {
   Service: null,
   loading: true,
   error: null,
+  sugServices: [],
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -33,6 +36,14 @@ export default function (state = initialState, action) {
         loading: false,
         Services: [],
         Service: null,
+        error: payload,
+      };
+    case GET_SUG_SERVICES_SUCCESS:
+      return {
+        sugServices: payload,
+      };
+    case GET_SUG_SERVICES_ERROR:
+      return {
         error: payload,
       };
     default:

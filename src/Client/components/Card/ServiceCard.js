@@ -2,22 +2,17 @@ import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 import { addToCart } from "../../../actions/cart";
 import SingleService from "../../pages/SingleService";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import "./style.css";
 import placeholderimage from "../../images/logo.png";
 import cartAlert from "../homePageSlider/components/Popup/cartAlert";
 
-export default function ServiceCard({ service }) {
+export default function ServiceCard({ service, setIsBackDrop }) {
+  const { cartItems } = useSelector((state) => state.cart);
   const history = useHistory();
   const dispatch = useDispatch();
   const [image, setImage] = useState();
-  // const handleImage = async () => {
-  //   const res = await axios.get(
-  //     `http://localhost:8000/api/servicesImage/${service._id}`
-  //   );
-  //   console.log("IMage ==> ", res);
-  // };
 
   useEffect(() => {
     setImage(`http://localhost:8000/api/servicesImage/${service._id}`);
@@ -25,7 +20,14 @@ export default function ServiceCard({ service }) {
 
   const addToCartHandler = () => {
     dispatch(addToCart(service._id));
+  };
+
+  const goToCart = () => {
     history.push("/cart");
+  };
+
+  const handleBackdrop = () => {
+    setIsBackDrop(true);
   };
 
   return (
@@ -90,7 +92,18 @@ export default function ServiceCard({ service }) {
                   <div className="lg:flex py-2 text-sm text-gray-600">
                     <div className="w-full flex-none text-sm flex items-center text-gray-600">
                       <ul class="list-disc">
-                        <li>{service.features}</li>
+                        {service.features.map((m, index) =>
+                          index > 2 ? (
+                            index < 2 && (
+                              <>
+                                {" "}
+                                <li>{m}</li> More...{" "}
+                              </>
+                            )
+                          ) : (
+                            <li>{m}</li>
+                          )
+                        )}
                       </ul>
                     </div>
                     <div className="flex-1 inline-flex items-center mb-3"></div>
@@ -99,7 +112,10 @@ export default function ServiceCard({ service }) {
                     <Popup
                       trigger={
                         <div className="flex flex-between">
-                          <button className="no-underline text-sitetheme-blue">
+                          <button
+                            onClick={handleBackdrop}
+                            className="no-underline text-sitetheme-blue"
+                          >
                             {" "}
                             Vivew More{" "}
                           </button>
@@ -123,7 +139,11 @@ export default function ServiceCard({ service }) {
                     >
                       {(close) => (
                         <div className="modal">
-                          <SingleService close={close} service={service} />
+                          <SingleService
+                            close={close}
+                            service={service}
+                            setIsBackDrop={setIsBackDrop}
+                          />
                         </div>
                       )}
                     </Popup>
@@ -131,7 +151,10 @@ export default function ServiceCard({ service }) {
                     <Popup
                       trigger={
                         <div className="flex flex-between">
-                          <button className="mt-2 transition ease-in duration-300 inline-flex items-center text-sm font-medium md:mb-0 bg-sitetheme-blue px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:text-sitetheme-blue hover:bg-white border hover:border-sitetheme-blue">
+                          <button
+                            onClick={addToCartHandler}
+                            className="mt-2 transition ease-in duration-300 inline-flex items-center text-sm font-medium md:mb-0 bg-sitetheme-blue px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:text-sitetheme-blue hover:bg-white border hover:border-sitetheme-blue"
+                          >
                             <span>Add Cart</span>
                           </button>
                         </div>
@@ -171,14 +194,14 @@ export default function ServiceCard({ service }) {
                                 </span>
                                 <p className="text-sm text-gray-500 px-8">
                                   A new item has been added to your Shopping
-                                  Cart. You now have 1 items in your Shopping
-                                  Cart.
+                                  Cart. You now have {cartItems.length} items in
+                                  your Shopping Cart.
                                 </p>
                               </div>
                               {/* <!--footer--> */}
                               <div className="p-3  mt-2 text-center space-x-4 md:block">
                                 <button
-                                  onClick={addToCartHandler}
+                                  onClick={goToCart}
                                   className="mb-2 md:mb-0 bg-sitetheme-blue border border-thbg-sitetheme-blue px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-white hover:text-sitetheme-blue hover:border-sitetheme-blue"
                                 >
                                   View Shopping Cart{" "}

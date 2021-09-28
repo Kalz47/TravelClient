@@ -7,8 +7,9 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../actions/cart";
 import { useHistory } from "react-router";
 import SingleServiceCard from "../components/Card/SingleServiceCard";
+import placeholderimage from "../images/logo.png";
 
-export default function SingleService({ close, service }) {
+export default function SingleService({ close, service, setIsBackDrop }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const [image, setImage] = useState();
@@ -34,6 +35,7 @@ export default function SingleService({ close, service }) {
           className=" text-gray-300  absolute top-2 right-2"
           onClick={() => {
             close();
+            setIsBackDrop(false);
           }}
         >
           {" "}
@@ -50,11 +52,20 @@ export default function SingleService({ close, service }) {
             ></path>
           </svg>
         </button>
-        <img
-          alt="ecommerce"
-          className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-          src={image}
-        />
+        {image ? (
+          <img
+            alt="ecommerce"
+            className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+            src={image}
+          />
+        ) : (
+          <img
+            alt="ecommerce"
+            className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+            src={placeholderimage}
+          />
+        )}
+
         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           {/* <h2 className="text-sm title-font text-gray-500 tracking-widest">
           {service.name} {service._id}
@@ -169,7 +180,11 @@ export default function SingleService({ close, service }) {
               </a>
             </span>
           </div>
-          <p className="leading-relaxed w-screen">{service.features}</p>
+          <p className="leading-relaxed w-screen">
+            {service.features.map((m) => (
+              <li>{m}</li>
+            ))}
+          </p>
           <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
             <div className="flex">
               <img className=" ml-1  w-auto h-8" src={ProductLogo} />
