@@ -152,7 +152,10 @@ export default function ServiceCard({ service, setIsBackDrop }) {
                       trigger={
                         <div className="flex flex-between">
                           <button
-                            onClick={addToCartHandler}
+                            onClick={() => {
+                              addToCartHandler();
+                              handleBackdrop();
+                            }}
                             className="mt-2 transition ease-in duration-300 inline-flex items-center text-sm font-medium md:mb-0 bg-sitetheme-blue px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:text-sitetheme-blue hover:bg-white border hover:border-sitetheme-blue"
                           >
                             <span>Add Cart</span>
@@ -169,6 +172,7 @@ export default function ServiceCard({ service, setIsBackDrop }) {
                               className=" text-gray-300  absolute top-2 right-2"
                               onClick={() => {
                                 close();
+                                setIsBackDrop(false);
                               }}
                             >
                               {" "}
