@@ -14,9 +14,6 @@ export default function AdminNav() {
                   href="#"
                   className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900"
                 >
-                  {/* <svg className="h-6 w-6 mr-1 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg> */}
                   <span className="font-bold">Enter Logo</span>
                 </a>
               </div>

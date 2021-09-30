@@ -1,6 +1,5 @@
 import React from "react";
 import Iframe from "react-iframe";
-import NavBar from "../components/NavBar";
 import Footer from "./HomePage/Footer";
 
 export default function ContactUs() {
