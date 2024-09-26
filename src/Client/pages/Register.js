@@ -1,13 +1,7 @@
 import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import NavBar from "../components/NavBar";
-import { registerUser } from "../../actions/auth";
-import { useDispatch } from "react-redux";
-import Footer from "./HomePage/Footer";
 import UserDetails from "../components/Card/UserDetails";
 
-const Register = ({ history, close }) => {
+const Register = ({ close }) => {
   // const dispatch = useDispatch();
   // const [formData, setFormData] = useState({
   //   email: "",
